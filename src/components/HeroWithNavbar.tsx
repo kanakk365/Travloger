@@ -15,7 +15,6 @@ export default function HeroWithNavbar() {
       <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-6 bg-transparent">
         <div className="flex items-center">
           <NextImage src="/landing/logo.png" alt="logo" width={150} height={150} />
-          <div className="ml-2 w-2 h-2 bg-teal-400 rounded-full"></div>
         </div>
 
         <div className="hidden md:flex items-center gap-20">

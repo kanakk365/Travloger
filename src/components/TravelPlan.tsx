@@ -1,24 +1,25 @@
 "use client"
 import { useState } from "react";
+import Image from "next/image";
 import { ChevronRight, Clock, Calendar, IndianRupee, ArrowDown } from "lucide-react";
 
 export default function TravelPlan() {
   const [budget, setBudget] = useState(10000);
 
   return (
-    <section className="bg-white py-16">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">What’s your Travel Plan</h2>
+    <section className="bg-white py-16 ">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-4xl md:text-5xl text-center mb-12">What’s your Travel Plan</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
           {/* Filters Card */}
-          <div className="bg-white shadow-xl rounded-2xl p-6 md:p-8 border border-black/5">
-            <h3 className="text-xl font-semibold mb-6">Select your filters</h3>
+          <div className="bg-white shadow-xl rounded-2xl p-8 md:p-10 border border-black/5 h-full">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-8">Select your filters</h3>
 
             {/* Mood */}
-            <div className="mb-6">
-              <div className="text-sm text-gray-700 mb-3">Mood</div>
-              <div className="flex flex-wrap gap-3">
+            <div className="mb-8">
+              <div className="text-base md:text-lg text-gray-700 mb-4 font-medium">Mood</div>
+              <div className="flex flex-wrap gap-4">
                 {[
                   { label: "Adventure 🧗", key: "adventure" },
                   { label: "Chill 🏖️", key: "chill" },
@@ -26,7 +27,7 @@ export default function TravelPlan() {
                 ].map((item) => (
                   <button
                     key={item.key}
-                    className="rounded-full border px-4 py-2 text-sm bg-white hover:bg-gray-50"
+                    className=" text-neutral-500 rounded-full border px-6 py-1.5 text-base bg-white hover:bg-gray-50 transition-colors"
                   >
                     {item.label}
                   </button>
@@ -35,9 +36,9 @@ export default function TravelPlan() {
             </div>
 
             {/* Budget */}
-            <div className="mb-6">
-              <div className="text-sm text-gray-700 mb-3">Budget</div>
-              <div className="px-1">
+            <div className="mb-8">
+              <div className="text-base md:text-lg text-gray-700 mb-4 font-medium">Budget</div>
+              <div className="px-2">
                 <input
                   type="range"
                   min={10000}
@@ -45,9 +46,9 @@ export default function TravelPlan() {
                   step={1000}
                   value={budget}
                   onChange={(e) => setBudget(Number(e.target.value))}
-                  className="w-full accent-black"
+                  className="w-full accent-black h-2"
                 />
-                <div className="flex justify-between text-xs text-gray-600 mt-2">
+                <div className="flex justify-between text-sm md:text-base text-gray-600 mt-3 font-medium">
                   <span>₹10k</span>
                   <span>₹2L</span>
                 </div>
@@ -55,13 +56,13 @@ export default function TravelPlan() {
             </div>
 
             {/* Location */}
-            <div className="mb-6">
-              <div className="text-sm text-gray-700 mb-3">Location</div>
-              <div className="flex gap-3">
-                <button className="rounded-full border px-4 py-2 text-sm bg-white hover:bg-gray-50">
+            <div className="mb-8">
+              <div className="text-base md:text-lg text-gray-700 mb-4 font-medium">Location</div>
+              <div className="flex gap-4">
+                <button className="rounded-full text-neutral-500 border px-6 py-1.5 text-base bg-white hover:bg-gray-50 transition-colors">
                   🏡 Domestic
                 </button>
-                <button className="rounded-full border px-4 py-2 text-sm bg-white hover:bg-gray-50">
+                <button className="rounded-full text-neutral-500 border px-8 py-1.5 text-base bg-white hover:bg-gray-50 transition-colors">
                   🌍 International
                 </button>
               </div>
@@ -69,25 +70,27 @@ export default function TravelPlan() {
 
             {/* Travel Style */}
             <div>
-              <div className="text-sm text-gray-700 mb-3">Travel Style</div>
-              <div className="flex gap-3">
-                <button className="rounded-full border px-6 py-2 text-sm bg-white hover:bg-gray-50">Solo</button>
-                <button className="rounded-full border px-6 py-2 text-sm bg-white hover:bg-gray-50">Group</button>
+              <div className="text-base md:text-lg text-gray-700 mb-4 font-medium">Travel Style</div>
+              <div className="flex gap-4">
+                <button className="rounded-full text-neutral-500 border px-8 py-1.5 text-base bg-white hover:bg-gray-50 transition-colors">Solo</button>
+                <button className="rounded-full text-neutral-500 border px-8 py-1.5 text-base bg-white hover:bg-gray-50 transition-colors">Group</button>
               </div>
             </div>
           </div>
 
           {/* Results List */}
           <div className="flex flex-col gap-6">
-            {[1, 2, 3].map((card, index) => (
+            {[1, 2].map((card, index) => (
               <div
                 key={card}
-                className="relative overflow-hidden rounded-3xl h-40 md:h-44"
+                className="relative overflow-hidden rounded-3xl h-52 md:h-52"
               >
-                <img
+                <Image
                   src={`/landing/card-${index + 1}.jpg`}
                   alt="destination"
-                  className="absolute inset-0 h-full w-full object-cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-black/30" />
 
@@ -124,7 +127,7 @@ export default function TravelPlan() {
 
             {/* Scroll indicator */}
             <div className="relative overflow-hidden rounded-3xl h-36">
-              <img src="/landing/card-4.jpg" alt="more" className="absolute inset-0 h-full w-full object-cover" />
+              <Image src="/landing/card-4.jpg" alt="more" fill sizes="100vw" className="object-cover" />
               <div className="absolute inset-0 bg-black/30" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="h-12 w-12 rounded-full bg-black text-white flex items-center justify-center">
