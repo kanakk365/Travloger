@@ -25,9 +25,9 @@ const destinations = [
   },
 ];
 
-export default function Explore() {
+export default function BeyondBorders() {
   return (
-    <section className="relative overflow-hidden pb-20 pt-24 mt-16 sm:pb-32 sm:pt-28 font-manrope bg-white">
+    <section className="relative overflow-hidden pb-20 pt-24 mt-16 sm:pb-32 sm:pt-48 font-manrope bg-white">
       <div className="max-w-7xl mx-auto px-10">
         <div className="relative isolate">
           <div className="pointer-events-none absolute -inset-x-8 sm:-inset-x-18 lg:-inset-x-24 -top-28 h-[25rem] sm:h-[25rem] rounded-3xl ">
@@ -42,7 +42,7 @@ export default function Explore() {
 
           <div className="relative z-10 w-full flex flex-col items-center">
             <h2 className="text-center  text-3xl sm:text-4xl md:text-5xl font-semibold tracking- text-white drop-shadow-[0_0.75rem_2.8125rem_rgba(0,0,0,0.4)]">
-              Explore Incredible India
+              Go Beyond Borders
             </h2>
 
             <div className="relative mt-12 sm:mt-16 w-full">
