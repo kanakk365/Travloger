@@ -33,7 +33,7 @@ export default function WhyTravel() {
     <section className="bg-white py-24">
       <div className="mx-auto flex container flex-col gap-16 px-16">
         <div className="text-center">
-          <h2 className="font-poppins text-3xl font-semibold text-black sm:text-4xl md:text-[44px]">
+          <h2 className=" text-3xl font-semibold text-black sm:text-4xl md:text-[44px]">
             Why Travel with Travloger?
           </h2>
         </div>

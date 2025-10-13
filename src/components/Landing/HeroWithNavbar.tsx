@@ -1,5 +1,6 @@
 import { Search, Star, Users, Heart, CreditCard } from "lucide-react";
 import NextImage from "next/image";
+import Link from "next/link";
 
 export default function HeroWithNavbar() {
   return (
@@ -14,7 +15,12 @@ export default function HeroWithNavbar() {
 
       <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-6 bg-transparent">
         <div className="flex items-center">
-          <NextImage src="/landing/logo.png" alt="logo" width={150} height={150} />
+          <NextImage
+            src="/landing/logo.png"
+            alt="logo"
+            width={150}
+            height={150}
+          />
         </div>
 
         <div className="hidden md:flex items-center gap-20">
@@ -51,11 +57,11 @@ export default function HeroWithNavbar() {
         </div>
 
         <div className="flex items-center space-x-3">
-          <button
-            className="bg-gradient-to-r cursor-pointer text-sm from-[#00A99D] to-[#009186] text-white px-8 py-1.5 flex items-center justify-center  rounded-full"
-          >
-            Login
-          </button>
+          <Link href={"/login"} >
+            <button className="bg-gradient-to-r cursor-pointer text-sm from-[#00A99D] to-[#009186] text-white px-8 py-1.5 flex items-center justify-center  rounded-full">
+              Login
+            </button>
+          </Link>
           <button className="bg-black hover:bg-gray-800 cursor-pointer text-neutral-300 text-sm px-8 py-1.5 flex items-center justify-center rounded-full">
             Plan my trip
           </button>

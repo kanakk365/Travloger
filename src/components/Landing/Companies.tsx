@@ -18,16 +18,9 @@ export default function Companies() {
     <section className="bg-white py-16 sm:py-24">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 text-center">
         <div className="flex flex-col gap-3">
-          <span className="text-sm font-semibold uppercase tracking-[0.35em] text-neutral-400">
-            Trusted by leading brands
-          </span>
-          <h2 className="text-3xl font-semibold text-neutral-900 sm:text-4xl">
-            Partners that power every journey
+          <h2 className="text-4xl font-semibold leading-loose text-neutral-900 sm:text-6xl">
+            Companies that trust us
           </h2>
-          <p className="max-w-2xl text-base text-neutral-500 sm:text-lg">
-            We collaborate with global travel innovators to secure better deals,
-            richer itineraries, and seamless experiences for our community.
-          </p>
         </div>
 
         <div className="relative mt-4 w-full overflow-hidden">
