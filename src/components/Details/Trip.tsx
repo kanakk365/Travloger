@@ -184,6 +184,38 @@ function Trip() {
               ))}
             </div>
           </div>
+
+          <div className="space-y-4 ">
+            <h2 className="text-lg font-semibold uppercase text-slate-900">
+              Destination Route
+            </h2>
+            <div className=" rounded-xl px-6 py-4 text-center border-[1px] border-[#009186] bg-[#e0f3f1]  " >
+              <div className="flex items-center justify-start gap-4 text-lg font-semibold text-[#009186]">
+                <span className="">JODHPUR</span>
+                <span className="text-xl">→</span>
+                <span className="">UDAIPUR</span>
+                <span className="text-xl">→</span>
+                <span className="">JAISALMER</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h2 className="text-lg font-semibold uppercase text-slate-900">
+              Stay Category
+            </h2>
+            <div className="flex items-center gap-6">
+              <button className="rounded-xl w-[10rem] border-[1px] border-[#009186] bg-[#e0f3f1] px-6 py-5 text-sm font-semibold text-emerald-600 transition-colors hover:bg-emerald-100">
+                STANDARD
+              </button>
+              <button className="rounded-xl w-[10rem] border border-slate-200 bg-white px-6 py-5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50">
+                DELUXE
+              </button>
+              <button className="rounded-xl w-[10rem] border border-slate-200 bg-white px-6 py-5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50">
+                SUPER DELUXE
+              </button>
+            </div>
+          </div>
         </div>
 
         <div className="w-full  rounded-[32px] border border-slate-100 bg-white/95 p-8 shadow-md">

@@ -3,7 +3,7 @@ import React from 'react'
 
 function TopCard() {
   return (
-    <div className="relative mt-10 h-[18rem] w-full overflow-hidden rounded-3xl  sm:h-[20rem] md:h-[17rem]">
+    <div className=" max-w-7xl mx-auto relative mt-10 h-[18rem] w-full overflow-hidden rounded-3xl  sm:h-[20rem] md:h-[17rem]">
         <Image
           src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1600&q=80"
           alt="Ladakh mountain range"
