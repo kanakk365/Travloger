@@ -7,7 +7,7 @@ export default function TravelPlan() {
   const [budget, setBudget] = useState(10000);
 
   return (
-    <section className="bg-white py-16 ">
+    <section className="bg-white sm:mt-16 mt-8 py-16 ">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl md:text-5xl text-center mb-12">What’s your Travel Plan</h2>
 

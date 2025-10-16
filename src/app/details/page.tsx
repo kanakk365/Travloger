@@ -6,6 +6,7 @@ import React from 'react'
 import Whyus from '@/components/Details/Whyus'
 import Trending from '@/components/Details/Trending'
 import Footer from '@/components/Footer'
+import Policy from '@/components/Details/Policy'
 
 function Details() {
   return (
@@ -16,6 +17,7 @@ function Details() {
       <Package />
       <Whyus />
       <Trending />
+      <Policy />
       <Footer />
     </div>
   ) 
