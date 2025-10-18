@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
 interface AccordionItem {
   id: string;
@@ -152,33 +153,77 @@ For copyright concerns, email: copyright@traveloger.com`,
 
 function Policy() {
   const [openId, setOpenId] = useState<string | null>("privacy");
+  const prefersReducedMotion = useReducedMotion();
 
   const toggleAccordion = (id: string) => {
-    setOpenId(openId === id ? null : id);
+    setOpenId((current) => (current === id ? null : id));
   };
+
+  const transition = prefersReducedMotion
+    ? undefined
+    : { duration: 0.4, ease: [0.33, 1, 0.68, 1] };
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <div className="space-y-4">
-        {accordionItems.map((item) => (
-          <div
-            key={item.id}
-            className="border border-gray-200 rounded-lg overflow-hidden "
-          >
-            <button
-              onClick={() => toggleAccordion(item.id)}
-              className="w-full px-6 py-5 bg-white hover:bg-gray-50 transition-colors flex items-center justify-between font-semibold text-gray-900"
-            >
-              <span className="text-lg">{item.title}</span>
-            </button>
+        {accordionItems.map((item) => {
+          const isOpen = openId === item.id;
+          const contentId = `${item.id}-content`;
 
-            {openId === item.id && (
-              <div className="px-6 py-6 bg-gray-50 border-t border-gray-200 text-gray-700 leading-relaxed whitespace-pre-line animate-in fade-in duration-300">
-                {item.content}
-              </div>
-            )}
-          </div>
-        ))}
+          return (
+            <div
+              key={item.id}
+              className="overflow-hidden rounded-lg border border-gray-200 bg-white"
+            >
+              <button
+                id={`${item.id}-trigger`}
+                type="button"
+                onClick={() => toggleAccordion(item.id)}
+                className="flex w-full items-center justify-between px-6 py-5 text-left font-semibold text-gray-900 transition-colors hover:bg-gray-50"
+                aria-expanded={isOpen}
+                aria-controls={contentId}
+              >
+                <span className="text-lg">{item.title}</span>
+                <motion.span
+                  animate={
+                    prefersReducedMotion
+                      ? undefined
+                      : { rotate: isOpen ? 180 : 0 }
+                  }
+                  transition={{ duration: 0.25, ease: "easeInOut" }}
+                  className="ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-500"
+                >
+                  <ChevronDown className="h-5 w-5" />
+                </motion.span>
+              </button>
+
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    key={item.id}
+                    initial={prefersReducedMotion ? false : "collapsed"}
+                    animate={prefersReducedMotion ? undefined : "open"}
+                    exit={prefersReducedMotion ? undefined : "collapsed"}
+                    variants={{
+                      open: { height: "auto", opacity: 1 },
+                      collapsed: { height: 0, opacity: 0 },
+                    }}
+                    transition={transition}
+                    style={{ overflow: "hidden" }}
+                    className="border-t border-gray-200 bg-gray-50 text-gray-700"
+                    id={contentId}
+                    role="region"
+                    aria-labelledby={`${item.id}-trigger`}
+                  >
+                    <div className="px-6 py-6 leading-relaxed whitespace-pre-line">
+                      {item.content}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
