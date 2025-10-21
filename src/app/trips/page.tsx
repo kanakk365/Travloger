@@ -4,6 +4,7 @@ import Link from "next/link";
 import NavbarWhite from "@/components/NavbarWhite";
 import { Search } from "lucide-react";
 import { useMemo, useState } from "react";
+import Footer from "@/components/Footer";
 
 const TripsPage = () => {
   const [activeTab, setActiveTab] = useState<"upcoming" | "past">("past");
@@ -22,7 +23,7 @@ const TripsPage = () => {
         id: 1,
         title: "Rajasthan 2025",
         image:
-          "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=80",
+          "/landing/rajasthanlong.png",
         startDate: "24 July 2024",
         endDate: "01 August 2024",
         duration: "6 nights 7 days",
@@ -31,7 +32,16 @@ const TripsPage = () => {
         id: 2,
         title: "Valley of Flowers",
         image:
-          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
+          "/landing/valley.png",
+        startDate: "24 July 2024",
+        endDate: "01 August 2024",
+        duration: "6 nights 7 days",
+      },
+      {
+        id: 3,
+        title: "Kedarkantha Trek",
+        image:
+          "/landing/kedarnath.png",
         startDate: "24 July 2024",
         endDate: "01 August 2024",
         duration: "6 nights 7 days",
@@ -75,7 +85,7 @@ const TripsPage = () => {
       </section>
 
       {/* Tabs and Content Section */}
-      <section className="mx-auto -mt-24 w-full max-w-7xl px-6 pb-24 relative z-10">
+      <section className="mx-auto -mt-24 w-full max-w-7xl px-6 pb-24 relative z-10 mb-20 ">
         <div className="rounded-xl border border-slate-200 bg-white">
           <div className="flex flex-col items-stretch text-left">
             <div className="relative flex w-full justify-center overflow-hidden rounded-t-xl bg-slate-100">
@@ -163,6 +173,7 @@ const TripsPage = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </main>
   );
 };

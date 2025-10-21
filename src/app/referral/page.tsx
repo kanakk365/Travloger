@@ -4,6 +4,7 @@ import { Copy, Share2 } from "lucide-react";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { useState } from "react";
+import Footer from "@/components/Footer";
 
 const referralStats = [
   {
@@ -129,7 +130,7 @@ export default function ReferralPage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-12 flex w-full max-w-6xl flex-col gap-16 px-4 sm:px-6 lg:px-0">
+      <section className="mx-auto mt-12 flex w-full max-w-6xl flex-col gap-16 px-4 sm:px-6 lg:px-0 mb-20">
         <div className="rounded-4xl bg-white px-6 py-8 shadow-[0_40px_80px_-50px_rgba(12,62,45,0.25)] md:px-10 md:py-10">
           <div className="mb-6 flex items-center justify-between">
             <h2 className="text-xl font-semibold text-[#1E1E1E]">
@@ -196,6 +197,7 @@ export default function ReferralPage() {
           </ol>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }
