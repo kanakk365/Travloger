@@ -140,9 +140,9 @@ const ReviewPage = () => {
           </section>
         </>
       ) : (
-        <section className="mx-auto mt-16 flex w-full max-w-3xl justify-center rounded-[40px] bg-gradient-to-b from-[#08347F] to-[#018076]  text-center text-white shadow-[0_40px_80px_-50px_rgba(8,52,127,0.6)]">
+        <section className="mx-auto mt-16 flex w-full max-w-3xl justify-center rounded-2xl bg-gradient-to-b from-[#08347F] to-[#018076]  text-center text-white shadow-[0_40px_80px_-50px_rgba(8,52,127,0.6)]">
           <div
-            className="relative w-full rounded-[32px] px-6 pb-10 pt-12"
+            className="relative w-full rounded-2xl px-6 pb-10 pt-12"
             style={{
               backgroundImage: "url(/trips/reviewBg.png)",
               backgroundRepeat: "repeat",
@@ -151,7 +151,7 @@ const ReviewPage = () => {
             <div className="" />
             <div className="relative z-10 space-y-12">
               <div className="space-y-3">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white/10">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center  bg-white/10">
                   <Image
                     src="/trips/plane.svg"
                     alt="Thank you"
