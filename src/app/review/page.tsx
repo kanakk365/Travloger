@@ -2,11 +2,11 @@
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { useMemo, useState } from "react";
+import Footer from "@/components/Footer";
 
 const tripDetails = {
   title: "Rajasthan 2025",
-  image:
-    "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1400&q=80",
+  image: "/landing/rajasthanlong.png",
   duration: "6 nights 7 days",
   dates: "24 July 2024 - 01 August 2024",
 };
@@ -26,13 +26,13 @@ const ReviewPage = () => {
   );
 
   return (
-    <main className="min-h-screen bg-white pb-20">
+    <main className="min-h-screen bg-white">
       <Navbar />
 
       {!submitted ? (
         <>
           {/* Header Image Section */}
-          <section className="relative max-w-7xl mx-auto rounded-3xl mt-10 isolate h-80 overflow-hidden">
+          <section className="relative max-w-7xl mx-auto rounded-3xl mt-10 isolate h-80 overflow-hidden  ">
             <div className="absolute inset-0">
               <Image
                 src={tripDetails.image}
@@ -56,7 +56,7 @@ const ReviewPage = () => {
           <div className="h-16" />
 
           {/* Review Form Section */}
-          <section className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-0">
+          <section className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-0 mb-20">
             <div className=" ">
               <h2 className="text-2xl font-semibold text-slate-900">
                 Write A Review
@@ -131,7 +131,7 @@ const ReviewPage = () => {
               <div className="mt-12 flex justify-center">
                 <button
                   onClick={() => setSubmitted(true)}
-                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#009186] to-[#00A99D] px-12 py-3 text-sm font-semibold text-white shadow-md transition hover:opacity-90"
+                  className="inline-flex items-center justify-center cursor-pointer rounded-full bg-gradient-to-r from-[#009186] to-[#00A99D] px-12 py-3 text-sm font-semibold text-white shadow-md transition hover:opacity-90"
                 >
                   Submit
                 </button>
@@ -140,7 +140,7 @@ const ReviewPage = () => {
           </section>
         </>
       ) : (
-        <section className="mx-auto mt-16 flex w-full max-w-3xl justify-center rounded-2xl bg-gradient-to-b from-[#08347F] to-[#018076]  text-center text-white shadow-[0_40px_80px_-50px_rgba(8,52,127,0.6)]">
+        <section className="mx-auto mb-20 mt-16 flex w-full max-w-3xl justify-center rounded-2xl bg-gradient-to-b from-[#08347F] to-[#018076]  text-center text-white shadow-[0_40px_80px_-50px_rgba(8,52,127,0.6)]">
           <div
             className="relative w-full rounded-2xl px-6 pb-10 pt-12"
             style={{
@@ -196,13 +196,17 @@ const ReviewPage = () => {
                   RAJASTHAN 2025 WAS UNFORGETTABLE — FROM PALACES TO SUNSETS,
                   EVERY MOMENT WAS MAGICAL!
                   <p className="text-xs text-white/70 mt-4">
-                    Rajasthan 2025 | {tripDetails.dates} | {tripDetails.duration}
+                    Rajasthan 2025 | {tripDetails.dates} |{" "}
+                    {tripDetails.duration}
                   </p>
                 </div>
               </div>
 
               <div className="flex justify-center">
-                <button className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-black " style={{ boxShadow: "0px 4px 113.2px 0px #FFFFFFC2" }}>
+                <button
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-black "
+                  style={{ boxShadow: "0px 4px 113.2px 0px #FFFFFFC2" }}
+                >
                   <Image
                     src="/landing/instagram.svg"
                     alt="Instagram"
@@ -217,6 +221,7 @@ const ReviewPage = () => {
           </div>
         </section>
       )}
+      <Footer />
     </main>
   );
 };
