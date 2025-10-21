@@ -7,18 +7,32 @@ import Whyus from '@/components/Details/Whyus'
 import Trending from '@/components/Details/Trending'
 import Footer from '@/components/Footer'
 import Policy from '@/components/Details/Policy'
+import AnimatedSection from '@/components/AnimatedSection'
+import Navbar from '@/components/Navbar'
 
 function Details() {
+  const animatedSections = [
+    { key: "top-card", node: <TopCard />, delay: 0.05 },
+    { key: "trip", node: <Trip />, delay: 0.1 },
+    { key: "trip-details", node: <TripDetails />, delay: 0.15 },
+    { key: "package", node: <Package />, delay: 0.2 },
+    { key: "whyus", node: <Whyus />, delay: 0.25 },
+    { key: "trending", node: <Trending />, delay: 0.3 },
+    { key: "policy", node: <Policy />, delay: 0.35 },
+  ];
+
   return (
-    <div className=" mx-auto">
-      <TopCard />
-      <Trip />
-      <TripDetails />
-      <Package />
-      <Whyus />
-      <Trending />
-      <Policy />
-      <Footer />
+    <div>
+        <Navbar />
+      
+      <div className="mx-auto">
+        {animatedSections.map(({ key, node, delay }) => (
+          <AnimatedSection key={key} delay={delay}>
+            {node}
+          </AnimatedSection>
+        ))}
+        <Footer />
+      </div>
     </div>
   ) 
 }

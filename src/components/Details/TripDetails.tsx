@@ -2,6 +2,7 @@
 
 import React from "react";
 import { ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 
 const aboutDetails = [
   {
@@ -83,20 +84,30 @@ function TripDetails() {
             />
           </button>
 
-          {isOpen("about") && (
-            <div className="space-y-3 border-t border-neutral-200 px-6 py-5">
-              <ul className="space-y-3 text-sm text-slate-600">
-                {aboutDetails.map(({ label, value }) => (
-                  <li key={label} className="flex gap-3">
-                    <span className="mt-2 h-1 w-1 rounded-full bg-neutral-500" />
-                    <span>
-                      <span className="font-semibold text-neutral-500">{label}:</span> {value}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          <AnimatePresence>
+            {isOpen("about") && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
+                <div className="space-y-3 border-t border-neutral-200 px-6 py-5">
+                  <ul className="space-y-3 text-sm text-slate-600">
+                    {aboutDetails.map(({ label, value }) => (
+                      <li key={label} className="flex gap-3">
+                        <span className="mt-2 h-1 w-1 rounded-full bg-neutral-500" />
+                        <span>
+                          <span className="font-semibold text-neutral-500">{label}:</span> {value}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         {itinerary.map(({ id, title, highlights }) => {
@@ -122,18 +133,28 @@ function TripDetails() {
                   }`}
                 />
               </button>
-              {open && highlights && (
-                <div className="border-t border-neutral-200 px-6 pb-6">
-                  <ul className="mt-4 space-y-2 text-sm text-slate-600">
-                    {highlights.map((point) => (
-                      <li key={point} className="flex gap-3">
-                        <span className="mt-2 h-1 w-1 rounded-full bg-neutral-500" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+              <AnimatePresence>
+                {open && highlights && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden border-t border-neutral-200"
+                  >
+                    <div className="px-6 pb-6">
+                      <ul className="mt-4 space-y-2 text-sm text-slate-600">
+                        {highlights.map((point) => (
+                          <li key={point} className="flex gap-3">
+                            <span className="mt-2 h-1 w-1 rounded-full bg-neutral-500" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           );
         })}
