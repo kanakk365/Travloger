@@ -27,7 +27,7 @@ const durations = [
     title: "6N/7D",
     startsFrom: "₹15,000",
     image:
-      "https://images.unsplash.com/photo-1547119957-637cd4a27c16?auto=format&fit=crop&w=420&q=80",
+      "/landing/trip1.png",
     active: true,
   },
   {
@@ -35,21 +35,21 @@ const durations = [
     title: "7N/8D",
     startsFrom: "₹25,000",
     image:
-      "https://images.unsplash.com/photo-1494472155656-f34e81b17ddc?auto=format&fit=crop&w=420&q=80",
+      "/landing/trip2.png",
   },
   {
     id: "8n9d",
     title: "8N/9D",
     startsFrom: "₹35,000",
     image:
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=420&q=80",
+      "/landing/trip3.png",
   },
   {
     id: "9n10d",
     title: "9N/10D",
     startsFrom: "₹45,000",
     image:
-      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=420&q=80",
+      "/landing/trip4.png",
   },
 ];
 
@@ -161,6 +161,7 @@ function Trip() {
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
+                    <div className="absolute inset-0 bg-black opacity-30"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                     <div className="absolute inset-0 flex items-end justify-center pb-2">

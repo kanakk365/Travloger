@@ -3,23 +3,23 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const destinations = [
   {
-    name: "RAJASTHAN",
+    name: "VIETNAM",
     image:
-      "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80",
+      "/landing/vietnam.png",
     oldPrice: "₹79,999/-",
     price: "₹29,999/- onwards",
   },
   {
-    name: "LADAKH",
+    name: "BALI",
     image:
-      "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80",
+      "/landing/bali.png",
     oldPrice: "₹79,999/-",
     price: "₹69,999/- onwards",
   },
   {
-    name: "HAMPI",
+    name: "SINGAPORE",
     image:
-      "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80",
+      "/landing/singapore.png",
     oldPrice: "₹79,999/-",
     price: "₹19,999/- onwards",
   },
