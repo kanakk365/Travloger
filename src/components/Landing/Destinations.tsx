@@ -15,8 +15,7 @@ const DESTINATION_MAP: Record<DestinationCategory, Destination[]> = {
   domestic: [
     {
       name: "Goa Beaches",
-      image:
-        "https://images.unsplash.com/photo-1512203492609-9721edcb9283?auto=format&fit=crop&w=600&q=80",
+      image: "/landing/kerala.png",
     },
     {
       name: "Jaipur Forts",
@@ -30,8 +29,7 @@ const DESTINATION_MAP: Record<DestinationCategory, Destination[]> = {
     },
     {
       name: "Valley",
-      image:
-        "https://images.unsplash.com/photo-1526402468707-28b0efc017f7?auto=format&fit=crop&w=600&q=80",
+      image: "/landing/valley.png",
     },
     {
       name: "Andaman",
@@ -40,23 +38,19 @@ const DESTINATION_MAP: Record<DestinationCategory, Destination[]> = {
     },
     {
       name: "Rann of Kutch",
-      image:
-        "https://images.unsplash.com/photo-1602488259605-fd12a3da624d?auto=format&fit=crop&w=600&q=80",
+      image: "/landing/rajasthan.png",
     },
     {
       name: "Munnar Hills",
-      image:
-        "https://images.unsplash.com/photo-1515923152115-758a6c1b7b6b?auto=format&fit=crop&w=600&q=80",
+      image: "/landing/kerala.png",
     },
     {
       name: "Darjeeling",
-      image:
-        "https://images.unsplash.com/photo-1549893249-42d62ccb7fd4?auto=format&fit=crop&w=600&q=80",
+      image: "/landing/kashmir.png",
     },
     {
       name: "Pondicherry",
-      image:
-        "https://images.unsplash.com/photo-1514661987656-76647f333a2a?auto=format&fit=crop&w=600&q=80",
+      image: "/landing/kerala.png",
     },
   ],
   international: [
@@ -76,9 +70,8 @@ const DESTINATION_MAP: Record<DestinationCategory, Destination[]> = {
         "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=600&q=80",
     },
     {
-      name: "Statue",
-      image:
-        "https://images.unsplash.com/photo-1459130787921-c278b912da85?auto=format&fit=crop&w=600&q=80",
+      name: "Hampi Temple",
+      image: "/landing/hampiTemple.png",
     },
     {
       name: "Taj Mahal",
@@ -91,9 +84,8 @@ const DESTINATION_MAP: Record<DestinationCategory, Destination[]> = {
         "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?auto=format&fit=crop&w=600&q=80",
     },
     {
-      name: "Colosseum",
-      image:
-        "https://images.unsplash.com/photo-1526481280695-3c4699ed2f86?auto=format&fit=crop&w=600&q=80",
+      name: "Paris",
+      image: "/landing/paris.png",
     },
     {
       name: "Grand Canyon",
@@ -106,9 +98,8 @@ const DESTINATION_MAP: Record<DestinationCategory, Destination[]> = {
         "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=600&q=80",
     },
     {
-      name: "Bali Temples",
-      image:
-        "https://images.unsplash.com/photo-1526481280695-3c4699ed2f86?auto=format&fit=crop&w=600&q=80",
+      name: "Bali",
+      image: "/landing/bali.png",
     },
   ],
 };

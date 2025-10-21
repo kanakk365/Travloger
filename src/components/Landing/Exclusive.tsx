@@ -1,27 +1,43 @@
 import Image from "next/image";
 import { CalendarDays, Clock3 } from "lucide-react";
+import { Marquee } from "@/components/ui/marquee";
 
 const tours = [
   {
     name: "Meghalaya",
     duration: "6 days",
     startDate: "Sep 23",
-    image:
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80",
+    image: "/landing/meghalaya.png",
   },
   {
     name: "Kerala",
     duration: "6 days",
     startDate: "Sep 23",
-    image:
-      "https://images.unsplash.com/photo-1572188863110-46d457c9234d?auto=format&fit=crop&w=1600&q=80",
+    image: "/landing/kerala2.png",
   },
   {
     name: "Manali",
     duration: "6 days",
     startDate: "Sep 23",
-    image:
-      "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80",
+    image: "/landing/manali2.png",
+  },
+  {
+    name: "Meghalaya",
+    duration: "6 days",
+    startDate: "Sep 23",
+    image: "/landing/meghalaya.png",
+  },
+  {
+    name: "Kerala",
+    duration: "6 days",
+    startDate: "Sep 23",
+    image: "/landing/kerala2.png",
+  },
+  {
+    name: "Manali",
+    duration: "6 days",
+    startDate: "Sep 23",
+    image: "/landing/manali2.png",
   },
 ];
 
@@ -31,7 +47,7 @@ export default function Exclusive() {
       <div className="absolute inset-0 -z-20">
         <div className="relative h-full w-full">
           <Image
-            src="/landing/herobg.png"
+            src="/landing/exclusive.png"
             alt="Mountain landscape backdrop"
             fill
             priority
@@ -44,16 +60,15 @@ export default function Exclusive() {
       <div className="relative z-10 mx-auto flex flex-col items-center gap-12 px-6 text-center text-white">
         <div className="space-y-4">
           <h2 className="text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
-           Travloger’s EXCLUSIVE Tours.
+            Travloger’s EXCLUSIVE Tours.
           </h2>
-          
         </div>
 
-        <div className="flex w-full flex-col gap-8 md:flex-row md:items-stretch md:gap-6">
-          {tours.map((tour) => (
+        <Marquee className="w-full [--gap:2.5rem]" pauseOnHover>
+          {tours.map((tour, index) => (
             <article
-              key={tour.name}
-              className="group relative flex-1 overflow-hidden rounded-[32px] shadow-[0_20px_45px_rgba(0,0,0,0.35)]"
+              key={`${tour.name}-${index}`}
+              className="group relative flex-shrink-0 overflow-hidden w-[28rem] rounded-[32px] shadow-[0_20px_45px_rgba(0,0,0,0.35)]"
             >
               <div className="relative h-[260px] w-full overflow-hidden md:h-[320px]">
                 <Image
@@ -61,7 +76,7 @@ export default function Exclusive() {
                   alt={`${tour.name} scenic view`}
                   fill
                   className="object-cover transition duration-500 ease-out group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="448px"
                   priority
                 />
               </div>
@@ -85,7 +100,7 @@ export default function Exclusive() {
               </div>
             </article>
           ))}
-        </div>
+        </Marquee>
       </div>
     </section>
   );
