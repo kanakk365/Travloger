@@ -18,13 +18,12 @@ function Details() {
     { key: "package", node: <Package />, delay: 0.2 },
     { key: "whyus", node: <Whyus />, delay: 0.25 },
     { key: "trending", node: <Trending />, delay: 0.3 },
-    { key: "policy", node: <Policy />, delay: 0.35 },
+    { key: "policy", node: <Policy />, delay: 0.3 },
   ];
 
   return (
     <div>
         <Navbar />
-      
       <div className="mx-auto">
         {animatedSections.map(({ key, node, delay }) => (
           <AnimatedSection key={key} delay={delay}>
