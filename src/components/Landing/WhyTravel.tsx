@@ -42,7 +42,7 @@ export default function WhyTravel() {
           <div className="grid grid-cols-1 sm:h-[35rem] sm:w-[50%] gap-6 sm:auto-rows-[110px] sm:grid-cols-2 sm:grid-rows-8 lg:auto-rows-[150px]">
             <figure className="relative h-56 overflow-hidden rounded-4xl shadow-[0_25px_45px_rgba(15,23,42,0.12)] sm:col-span-1 sm:row-span-5 sm:col-start-1 sm:row-start-1 sm:h-full">
               <Image
-                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80"
+                src="/landing/travel1.png"
                 alt="Traveler standing on a cliff at sunrise"
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 30vw"
@@ -51,7 +51,7 @@ export default function WhyTravel() {
             </figure>
             <figure className="relative h-56 overflow-hidden rounded-4xl shadow-[0_25px_45px_rgba(15,23,42,0.12)] sm:col-span-1 sm:row-span-3 sm:col-start-2 sm:row-start-1 sm:h-full">
               <Image
-                src="https://images.unsplash.com/photo-1526481280695-3c469e4934e3?auto=format&fit=crop&w=1600&q=80"
+                src="/landing/travel2.png"
                 alt="Traveler resting on mountain peak"
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 30vw"
@@ -60,7 +60,7 @@ export default function WhyTravel() {
             </figure>
             <figure className="relative h-56 overflow-hidden rounded-4xl shadow-[0_25px_45px_rgba(15,23,42,0.12)] sm:col-span-1 sm:row-span-3 sm:col-start-1 sm:row-start-6 sm:h-full">
               <Image
-                src="https://images.unsplash.com/photo-1613051468075-15c25c44f6e9?auto=format&fit=crop&w=1600&q=80"
+                src="/landing/travel3.png"
                 alt="Traveler climbing rocky summit"
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 30vw"
@@ -69,7 +69,7 @@ export default function WhyTravel() {
             </figure>
             <figure className="relative h-56 overflow-hidden rounded-4xl shadow-[0_25px_45px_rgba(15,23,42,0.12)] sm:col-span-1 sm:row-span-5 sm:col-start-2 sm:row-start-4 sm:h-full">
               <Image
-                src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1600&q=80"
+                src="/landing/travel4.png"
                 alt="Traveler walking through green valley"
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 30vw"
@@ -92,9 +92,9 @@ export default function WhyTravel() {
             ))}
           </div>
         </div>
-        <div className=" px-16  container relative mt-20 h-[18rem]  mx-auto overflow-hidden rounded-3xl  sm:h-[20rem] md:h-[20rem]">
+        <div className=" px-20  container relative mt-20 h-[22rem]  mx-auto overflow-hidden rounded-4xl  sm:h-[20rem] md:h-[22rem]">
           <Image
-            src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1600&q=80"
+            src="/landing/boat.png"
             alt="Ladakh mountain range"
             fill
             priority
@@ -103,7 +103,7 @@ export default function WhyTravel() {
 
           <div className="absolute inset-0 bg-[linear-gradient(269.83deg,_rgba(96,96,96,0)_-17.48%,_#000000_116.05%)]" />
 
-          <div className="absolute inset-y-0 left-0 flex flex-col justify-end pb-10 gap-3 px-8 text-white sm:px-12 md:px-4">
+          <div className="absolute inset-y-0 left-0 flex flex-col justify-end pb-10 gap-3 px-16 text-white sm:px-12 md:px-16">
             <p className="text-lg text-white/85 sm:text-2xl">
               Travelling with 8 or more ?
             </p>

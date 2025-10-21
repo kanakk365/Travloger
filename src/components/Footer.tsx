@@ -58,32 +58,32 @@ const tripSections = [
       {
         name: "HAMPI",
         image:
-          "https://images.unsplash.com/photo-1580381764631-1a0df144d689?auto=format&fit=crop&w=800&q=80",
+          "/landing/hampi.png",
       },
       {
         name: "MANALI",
         image:
-          "https://images.unsplash.com/photo-1545464333-9ae6608ab282?auto=format&fit=crop&w=800&q=80",
+          "/landing/manali.png",
       },
       {
-        name: "GOA",
+        name: "AGRA",
         image:
           "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80",
       },
       {
         name: "KASHMIR",
         image:
-          "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80",
+          "/landing/kashmir.png",
       },
       {
         name: "RAJASTHAN",
         image:
-          "https://images.unsplash.com/photo-1565623833408-5c53dfc5fdb3?auto=format&fit=crop&w=800&q=80",
+          "/landing/rajasthan.png",
       },
       {
         name: "SIKKIM",
         image:
-          "https://images.unsplash.com/photo-1611605698335-8b4c30d73133?auto=format&fit=crop&w=800&q=80",
+          "/landing/sikkim.png",
       },
     ],
   },
@@ -93,12 +93,12 @@ const tripSections = [
       {
         name: "THAILAND",
         image:
-          "https://images.unsplash.com/photo-1526481280695-3c46973edc81?auto=format&fit=crop&w=800&q=80",
+          "/landing/thai.png",
       },
       {
         name: "JAPAN",
         image:
-          "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80",
+          "/landing/japan.png",
       },
       {
         name: "CHINA",
@@ -113,12 +113,12 @@ const tripSections = [
       {
         name: "PERU",
         image:
-          "https://images.unsplash.com/photo-1526404079168-8b76fb399871?auto=format&fit=crop&w=800&q=80",
+          "/landing/peru.png",
       },
       {
         name: "KOREA",
         image:
-          "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&w=800&q=80",
+          "/landing/korea.png",
       },
     ],
   },

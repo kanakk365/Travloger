@@ -5,7 +5,7 @@ const photoCards = [
   {
     id: 1,
     image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
+      "/landing/photo1.png",
     likes: "1,688",
     badge: "Most Liked",
     badgeClasses: "bg-teal-300 text-slate-900",
@@ -15,14 +15,14 @@ const photoCards = [
   {
     id: 2,
     image:
-      "https://images.unsplash.com/photo-1610970881169-6ef9bf5cff88?auto=format&fit=crop&w=1200&q=80",
+      "/landing/photo2.png",
     likes: "1,688",
     heartClasses: "text-white",
   },
   {
     id: 3,
     image:
-      "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1200&q=80",
+      "/landing/photo3.png",
     likes: "1,688",
     heartClasses: "text-white",
   },
@@ -58,7 +58,7 @@ function Photographs() {
                       alt="Best trip photograph"
                       fill
                       sizes="(max-width: 768px) 100vw, 32vw"
-                      className="object-cover"
+                      className="object-cover transition-transform duration-300 hover:scale-105"
                       priority={id === 1}
                     />
                   </div>
