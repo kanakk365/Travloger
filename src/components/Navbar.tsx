@@ -12,7 +12,7 @@ export default function Navbar() {
     <nav className="relative z-50 flex items-center justify-between px-6 md:px-10 py-4 bg-transparent">
       <div className="flex items-center">
         <NextImage
-          src="/landing/logo.png"
+          src="/logoblack.png"
           alt="logo"
           width={150}
           height={150}
