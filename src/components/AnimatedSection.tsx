@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { motion, useReducedMotion, easeOut } from "motion/react";
 
 type AnimatedSectionProps = {
   children: ReactNode;
@@ -26,7 +26,7 @@ export default function AnimatedSection({
     : { opacity: 1, y: 0 };
   const transition = prefersReducedMotion
     ? undefined
-    : { duration: 0.6, ease: "easeOut", delay };
+    : { duration: 0.6, ease: easeOut, delay };
 
   return (
     <motion.div

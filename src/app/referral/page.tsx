@@ -108,7 +108,7 @@ export default function ReferralPage() {
           <div className="flex flex-col gap-4 max-w-4xl mx-auto py-8 md:py-10 ">
             <p className="text-lg font-medium ">Your referral link</p>
             <div className=" py-4 text-sm text-[#2E4A45] flex justify-between items-center w-full">
-              <div className="mt-2 flex flex-wrap w-[70%] items-center justify-between  border border-dashed border-neutral-700 py-2 px-2 rounded-full ">
+              <div className="mt-2 flex flex-wrap w-[70%] items-center justify-between  border border-dashed border-neutral-700 py-1 px-2 rounded-full ">
                 <span className="rounded-full bg-white px-4 py-2 font-medium tracking-wide text-[#294640]">
                   Hy1-twJh57u
                 </span>
