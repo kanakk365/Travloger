@@ -11,13 +11,15 @@ export default function NavbarWhite() {
   return (
     <nav className="relative z-50 flex items-center justify-between px-6 md:px-10 py-4 bg-transparent">
       <div className="flex items-center">
-        <NextImage
-          src="/landing/logo.png"
-          alt="logo"
-          width={150}
-          height={150}
-          className="w-16 sm:w-20 md:w-24 lg:w-32 xl:w-36 h-auto"
-        />
+        <Link href="/">
+          <NextImage
+            src="/landing/logo.png"
+            alt="logo"
+            width={150}
+            height={150}
+            className="w-16 sm:w-20 md:w-24 lg:w-32 xl:w-36 h-auto"
+          />
+        </Link>
       </div>
 
       <div className="hidden md:flex items-center gap-20">
