@@ -5,21 +5,21 @@ const destinations = [
   {
     name: "RAJASTHAN",
     image:
-      "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80",
+      "/landing/rajasthan.png",
     oldPrice: "₹79,999/-",
     price: "₹29,999/- onwards",
   },
   {
     name: "LADAKH",
     image:
-      "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80",
+      "/landing/ladakh.png",
     oldPrice: "₹79,999/-",
     price: "₹69,999/- onwards",
   },
   {
     name: "HAMPI",
     image:
-      "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80",
+      "/landing/hampitemple.png",
     oldPrice: "₹79,999/-",
     price: "₹19,999/- onwards",
   },
@@ -32,7 +32,7 @@ export default function Explore() {
         <div className="relative isolate">
           <div className="pointer-events-none absolute -inset-x-8 sm:-inset-x-18 lg:-inset-x-24 -top-28 h-[25rem] sm:h-[25rem] rounded-3xl ">
             <Image
-              src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1600&q=80"
+              src="/landing/city.png"
               alt="Taj Mahal silhouette"
               fill
               priority
@@ -55,14 +55,14 @@ export default function Explore() {
                   {destinations.map((destination) => (
                     <div
                       key={destination.name}
-                      className="relative h-[28rem] w-[23rem] overflow-hidden rounded-3xl shadow-[0px_4px_16px_0px_rgba(0,0,0,0.25)]"
+                      className="group relative h-[28rem] w-[23rem] overflow-hidden rounded-3xl shadow-[0px_4px_16px_0px_rgba(0,0,0,0.25)] cursor-pointer"
                     >
                       <Image
                         src={destination.image}
                         alt={destination.name}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20rem"
-                        className="object-cover"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/85" />
 
