@@ -156,7 +156,7 @@ export default function Destinations() {
           <button
             type="button"
             onClick={() => setCategory("domestic")}
-            className={`rounded-full border px-14 py-3 text-lg font-medium transition-all duration-200 ${
+            className={`rounded-full border px-6 sm:px-14 py-2 sm:py-3 text-sm sm:text-lg font-medium transition-all duration-200 ${
               category === "domestic"
                 ? "border-black bg-black text-white shadow-[0_20px_40px_rgba(15,23,42,0.12)] hover:bg-gray-900"
                 : "border-gray-200 bg-white text-gray-500 hover:text-gray-700"
@@ -168,7 +168,7 @@ export default function Destinations() {
           <button
             type="button"
             onClick={() => setCategory("international")}
-            className={`rounded-full border px-14 py-3 text-lg font-medium transition-all duration-200 ${
+            className={`rounded-full border px-6 sm:px-14 py-2 sm:py-3 text-sm sm:text-lg font-medium transition-all duration-200 ${
               category === "international"
                 ? "border-black bg-black text-white shadow-[0_20px_40px_rgba(15,23,42,0.12)] hover:bg-gray-900"
                 : "border-gray-200 bg-white text-gray-500 hover:text-gray-700"
@@ -180,8 +180,8 @@ export default function Destinations() {
         </div>
 
         <div className="relative mt-14 w-full max-w-6xl">
-          <div className="pointer-events-none absolute z-10 inset-y-0 left-0 w-48 bg-gradient-to-r from-white to-white/0" />
-          <div className="pointer-events-none absolute z-10 inset-y-0 right-0 w-48 bg-gradient-to-l from-white to-white/0" />
+          <div className="pointer-events-none hidden sm:block absolute z-10 inset-y-0 left-0 w-48 bg-gradient-to-r from-white to-white/0" />
+          <div className="pointer-events-none hidden sm:block absolute z-10 inset-y-0 right-0 w-48 bg-gradient-to-l from-white to-white/0" />
 
           <button
             type="button"
@@ -211,7 +211,7 @@ export default function Destinations() {
             <ArrowRight className="h-4 w-4" />
           </button>
 
-          <div className="flex items-center justify-center gap-6 overflow-hidden px-16">
+          <div className="flex items-center justify-center gap-3 sm:gap-6 overflow-hidden px-4 sm:px-16">
             {visibleDestinations.map((destination, index) => (
               <div
                 key={`${category}-${destination.name}`}
