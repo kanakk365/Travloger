@@ -1,13 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState, useRef } from "react";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Calendar,
-  Clock,
-  Sparkles,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar, Clock, Sparkles } from "lucide-react";
 
 const months = [
   { label: "Sep 25", isFeatured: true },
@@ -27,8 +21,7 @@ const months = [
 const trips = [
   {
     title: "Manali – Himachal Pradesh",
-    image:
-      "/landing/manali.png",
+    image: "/landing/manali.png",
     startDate: "Sep 23",
     duration: "6 days",
     originalPrice: "₹79,999/-",
@@ -36,8 +29,7 @@ const trips = [
   },
   {
     title: "Kashmir 2025",
-    image:
-      "/landing/kashmir.png",
+    image: "/landing/kashmir.png",
     startDate: "Sep 23",
     duration: "6 days",
     originalPrice: "₹79,999/-",
@@ -45,8 +37,7 @@ const trips = [
   },
   {
     title: "Kerala",
-    image:
-      "/landing/kerala.png",
+    image: "/landing/kerala.png",
     startDate: "Sep 23",
     duration: "6 days",
     originalPrice: "₹79,999/-",
@@ -60,13 +51,15 @@ export default function CommunityTravelExperiences() {
   const [canScrollRight, setCanScrollRight] = useState(true);
   const [selectedMonth, setSelectedMonth] = useState("Sep 25");
 
-  const scroll = (direction: 'left' | 'right') => {
+  const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
       const scrollAmount = 200;
-      const newScrollLeft = scrollRef.current.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
+      const newScrollLeft =
+        scrollRef.current.scrollLeft +
+        (direction === "left" ? -scrollAmount : scrollAmount);
       scrollRef.current.scrollTo({
         left: newScrollLeft,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   };
@@ -92,7 +85,7 @@ export default function CommunityTravelExperiences() {
 
         <div className="mb-12 flex items-center justify-center gap-6">
           <button
-            onClick={() => scroll('left')}
+            onClick={() => scroll("left")}
             disabled={!canScrollLeft}
             className={`flex h-16 w-16 items-center justify-center rounded-full transition-colors ${
               canScrollLeft
@@ -114,7 +107,7 @@ export default function CommunityTravelExperiences() {
                 <button
                   key={month.label}
                   onClick={() => handleMonthClick(month.label)}
-                  className={`flex items-center gap-2 rounded-full border px-8 py-3 text-lg transition-transform duration-300 ease-out cursor-pointer active:scale-95 whitespace-nowrap ${
+                  className={`flex items-center gap-2 rounded-full border px-5 md:px-8 py-2 md:py-3 text-sm md:text-lg transition-transform duration-300 ease-out cursor-pointer active:scale-95 whitespace-nowrap ${
                     isSelected
                       ? "border-[#02A589] bg-gradient-to-r from-[#00A99D] to-[#009186] text-white"
                       : month.isMuted
@@ -130,7 +123,7 @@ export default function CommunityTravelExperiences() {
           </div>
 
           <button
-            onClick={() => scroll('right')}
+            onClick={() => scroll("right")}
             disabled={!canScrollRight}
             className={`flex h-16 w-16 items-center justify-center rounded-full transition-colors ${
               canScrollRight
@@ -142,7 +135,52 @@ export default function CommunityTravelExperiences() {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        {/* Mobile slider */}
+        <div className="md:hidden -mx-6 px-6">
+          <div className="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory hide-scrollbar">
+            {trips.map((trip) => (
+              <div
+                key={trip.title}
+                className="group relative min-w-[16rem] h-[24rem] overflow-hidden rounded-3xl cursor-pointer snap-center"
+              >
+                <Image
+                  src={trip.image}
+                  alt={trip.title}
+                  fill
+                  sizes="(max-width: 768px) 80vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/30 to-black/85" />
+
+                <div className="absolute inset-x-5 bottom-5 text-white">
+                  <h3 className="mb-3 text-lg font-semibold">{trip.title}</h3>
+
+                  <div className="mb-4 flex gap-2 text-xs">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-3 py-1 backdrop-blur">
+                      <Calendar className="h-3.5 w-3.5" /> {trip.startDate}
+                    </span>
+                    <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-3 py-1 backdrop-blur">
+                      <Clock className="h-3.5 w-3.5" /> {trip.duration}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-xs">
+                    <span className="text-white/70 line-through text-xs">
+                      {trip.originalPrice}
+                    </span>
+                    <span className="text-base font-semibold text-[#FF9700]">
+                      {trip.currentPrice}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop grid */}
+        <div className="hidden md:grid grid-cols-1 gap-8 md:grid-cols-3">
           {trips.map((trip) => (
             <div
               key={trip.title}
