@@ -158,9 +158,9 @@ export default function BeyondBorders() {
 
   return (
     <section className="relative overflow-hidden pb-20 pt-24 mt-16 sm:pb-32 sm:pt-48 font-manrope bg-white">
-      <div className="max-w-7xl mx-auto px-10">
+      <div className="max-w-7xl mx-auto sm:px-10">
         <div className="relative isolate">
-          <div className="pointer-events-none absolute -inset-x-8 sm:-inset-x-18 lg:-inset-x-24 -top-28 h-[25rem] sm:h-[25rem] rounded-3xl ">
+          <div className="pointer-events-none absolute -inset-x-8 sm:-inset-x-18 lg:-inset-x-24 -top-28 h-[25rem] sm:h-[25rem] sm:rounded-3xl ">
             <Image
               src="/landing/paris.png"
               alt="Taj Mahal silhouette"
