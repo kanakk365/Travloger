@@ -2,7 +2,7 @@ import React from "react";
 
 function Package() {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto px-4">
       <div className="flex flex-col items-start justify-start">
         <h1 className="text-2xl font-semibold mb-6">
           What&apos;s in the package?

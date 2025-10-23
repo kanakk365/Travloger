@@ -123,7 +123,7 @@ function Trip() {
           </div>
 
           <div className="rounded-3xl  bg-white/95 p-6 shadow-sm">
-            <div className="grid gap-6 sm:grid-cols-3">
+            <div className="grid gap-6 grid-cols-2 md:grid-cols-3">
               {features.map(({ icon: Icon, label }) => (
                 <div
                   key={label}
@@ -144,7 +144,7 @@ function Trip() {
             <h2 className="text-xl font-semibold uppercase text-slate-900">
               Choose Trip Duration
             </h2>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
               {durations.map((duration) => (
                 <div
                   key={duration.id}
