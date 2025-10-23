@@ -76,14 +76,14 @@ export default function ReferralPage() {
           My Referrals
         </h1>
 
-        <div className="rounded-4xl bg-white shadow-[0_40px_80px_-50px_rgba(12,62,45,0.25)] p-8">
-          <div className="grid gap-6 max-w-4xl mx-auto  rounded-4xl border border-[#E5EFEB] bg-white px-6 py-8 md:grid-cols-3 md:px-10 md:py-10">
+        <div className="rounded-4xl bg-white shadow-[0_40px_80px_-50px_rgba(12,62,45,0.25)] p-6 sm:p-8">
+          <div className="grid gap-6 max-w-4xl mx-auto rounded-4xl border border-[#E5EFEB] bg-white px-4 sm:px-6 py-6 sm:py-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:px-10 md:py-10">
             {referralStats.map((stat) => (
               <div
                 key={stat.label}
-                className="flex items-center justify-between rounded-[28px] bg-[#F3F9F4] px-10 py-4 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]"
+                className="flex flex-col sm:flex-col items-center justify-center rounded-[28px] bg-[#F3F9F4] px-6 sm:px-10 py-4 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.6)]"
               >
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white bg-gradient-to-r from-[#00A99D] to-[#009186] ">
+                <div className="mb-4 flex h-12 sm:h-14 w-12 sm:w-14 items-center justify-center rounded-full bg-white bg-gradient-to-r from-[#00A99D] to-[#009186] ">
                   <Image
                     src={stat.icon}
                     alt={stat.label}
@@ -93,12 +93,12 @@ export default function ReferralPage() {
                 </div>
                 <div className="flex flex-col items-center justify-center">
                   <span
-                    className="text-3xl font-semibold text-[#009186]
+                    className="text-2xl sm:text-3xl font-semibold text-[#009186]
 ]"
                   >
                     {stat.value}
                   </span>
-                  <span className="mt-2 text-sm font-semibold text-black">
+                  <span className="mt-2 text-xs sm:text-sm font-semibold text-black">
                     {stat.label}
                   </span>
                 </div>
@@ -106,25 +106,47 @@ export default function ReferralPage() {
             ))}
           </div>
 
-          <div className="flex flex-col gap-4 max-w-4xl mx-auto py-8 md:py-10 ">
-            <p className="text-lg font-medium ">Your referral link</p>
-            <div className=" py-4 text-sm text-[#2E4A45] flex justify-between items-center w-full">
-              <div className="mt-2 flex flex-wrap w-[70%] items-center justify-between  border border-dashed border-neutral-700 py-1 px-2 rounded-full ">
-                <span className="rounded-full bg-white px-4 py-2 font-medium tracking-wide text-[#294640]">
+          <div className="flex flex-col gap-4 max-w-4xl mx-auto py-6 sm:py-8 md:py-10">
+            <p className="text-base sm:text-lg font-medium">Your referral link</p>
+            
+            {/* Mobile Layout */}
+            <div className="sm:hidden flex flex-col gap-3 w-full">
+              <div className="flex items-center gap-2 border border-dashed border-neutral-700 py-2 px-3 rounded-full w-full">
+                <span className="rounded-full bg-white px-3 py-1.5 font-medium tracking-wide text-[#294640] text-xs whitespace-nowrap flex-1">
+                  Hy1-twJh57u
+                </span>
+              </div>
+              <button
+                onClick={onCopy}
+                className="inline-flex items-center justify-center cursor-pointer gap-1.5 rounded-full bg-neutral-200 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.1em] text-[#2E4A45] transition hover:bg-neutral-300 whitespace-nowrap w-full"
+              >
+                <Copy className="h-3.5 w-3.5" />
+                {copied ? "Copied" : "Copy"}
+              </button>
+              <button className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#00A99D] to-[#009186] px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.1em] text-white shadow-[0_20px_45px_-20px_rgba(0,143,130,0.7)] transition hover:opacity-90 w-full">
+                <Share2 className="h-4 w-4" />
+                <span>Share</span>
+              </button>
+            </div>
+
+            {/* Desktop Layout */}
+            <div className="hidden sm:flex gap-3 sm:gap-4 sm:justify-between sm:items-center w-full">
+              <div className="flex items-center gap-2 border border-dashed border-neutral-700 py-2 px-3 rounded-full sm:w-[70%]">
+                <span className="rounded-full bg-white px-3 py-1.5 font-medium tracking-wide text-[#294640] text-sm whitespace-nowrap flex-1">
                   Hy1-twJh57u
                 </span>
                 <button
                   onClick={onCopy}
-                  className="inline-flex items-center cursor-pointer gap-2 rounded-full bg-neutral-200 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#2E4A45] transition hover:border-[#009186] hover:text-[#009186]"
+                  className="inline-flex items-center justify-center cursor-pointer gap-1.5 rounded-full bg-neutral-200 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.1em] text-[#2E4A45] transition hover:bg-neutral-300 whitespace-nowrap"
                 >
-                  <Copy className="h-4 w-4" />
-                  {copied ? "Copied" : "Copy link"}
+                  <Copy className="h-3.5 w-3.5" />
+                  {copied ? "Copied" : "Copy"}
+                </button>
+                <button className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#00A99D] to-[#009186] px-8 py-2 text-xs font-semibold uppercase tracking-[0.1em] text-white shadow-[0_20px_45px_-20px_rgba(0,143,130,0.7)] transition hover:opacity-90">
+                  <Share2 className="h-4 w-4" />
+                  <span>Share</span>
                 </button>
               </div>
-              <button className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#00A99D] to-[#009186] px-10 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white shadow-[0_20px_45px_-20px_rgba(0,143,130,0.7)] transition hover:opacity-90">
-                <Share2 className="h-4 w-4" />
-                Share
-              </button>
             </div>
           </div>
         </div>
@@ -133,13 +155,14 @@ export default function ReferralPage() {
       <section className="mx-auto mt-12 flex w-full max-w-6xl flex-col gap-16 px-4 sm:px-6 lg:px-0 mb-20">
         <div className="rounded-4xl bg-white px-6 py-8 shadow-[0_40px_80px_-50px_rgba(12,62,45,0.25)] md:px-10 md:py-10">
           <div className="mb-6 flex items-center justify-between">
-            <h2 className="text-xl font-semibold text-[#1E1E1E]">
+            <h2 className="text-lg sm:text-xl font-semibold text-[#1E1E1E]">
               My Referrals
             </h2>
           </div>
 
-          <div className="overflow-hidden rounded-2xl ">
-            <div className="grid grid-cols-[1.2fr_1fr_1fr_1fr] items-center  px-6 py-4 text-sm font-semibold  ">
+          {/* Desktop Table - Hidden on mobile */}
+          <div className="hidden sm:block overflow-hidden rounded-2xl">
+            <div className="grid grid-cols-[1.2fr_1fr_1fr_1fr] items-center px-6 py-4 text-sm font-semibold">
               <span>Date</span>
               <span>Name</span>
               <span>Status</span>
@@ -150,7 +173,7 @@ export default function ReferralPage() {
               {referrals.map((referral, index) => (
                 <div
                   key={`${referral.date}-${index}`}
-                  className="grid grid-cols-[1.2fr_1fr_1fr_1fr] rounded-2xl my-2 bg-[#eef7f7] items-center  px-6 py-5 text-sm text-[#2E4A45] hover:bg-[#F8FBFA]"
+                  className="grid grid-cols-[1.2fr_1fr_1fr_1fr] rounded-2xl my-2 bg-[#eef7f7] items-center px-6 py-5 text-sm text-[#2E4A45] hover:bg-[#F8FBFA]"
                 >
                   <span>{referral.date}</span>
                   <span>{referral.name}</span>
@@ -181,16 +204,56 @@ export default function ReferralPage() {
               ))}
             </div>
           </div>
+
+          {/* Mobile Cards - Visible only on mobile */}
+          <div className="sm:hidden space-y-3">
+            {referrals.map((referral, index) => (
+              <div
+                key={`${referral.date}-${index}`}
+                className="rounded-2xl bg-[#eef7f7] px-4 py-5 text-sm text-[#2E4A45] hover:bg-[#F8FBFA]"
+              >
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="font-semibold text-[#1E1E1E]">{referral.name}</span>
+                    <span className="text-right font-semibold text-[#1E1E1E]">{referral.reward}</span>
+                  </div>
+                  <div className="flex justify-between items-center text-xs">
+                    <span className="text-[#4E6B65]">{referral.date}</span>
+                    <span className="inline-flex items-center gap-2 text-black">
+                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#DEF5EE]">
+                        <svg
+                          width="12"
+                          height="10"
+                          viewBox="0 0 16 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M13.5938 3.09375L6.03125 10.6562L2.28125 6.8125"
+                            stroke="#2C9C87"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </span>
+                      {referral.status}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="rounded-4xl border border-transparent bg-white px-6 py-10 shadow-[0_40px_80px_-50px_rgba(12,62,45,0.25)] md:px-16">
-          <h2 className="text-xl font-semibold text-[#1E1E1E]">How it works</h2>
-          <ol className="mt-6 space-y-6 text-sm text-[#2E4A45]">
+        <div className="rounded-4xl border border-transparent bg-white px-6 py-8 shadow-[0_40px_80px_-50px_rgba(12,62,45,0.25)] sm:px-10 md:px-16">
+          <h2 className="text-lg sm:text-xl font-semibold text-[#1E1E1E]">How it works</h2>
+          <ol className="mt-6 space-y-4 sm:space-y-6 text-sm text-[#2E4A45]">
             {howItWorks.map((step, index) => (
-              <li key={step.title} className="flex items-start gap-4">
+              <li key={step.title} className="flex items-start gap-3 sm:gap-4">
                 <div className="space-y-1">
-                  <p className="font-semibold text-neutral-600 mb-4">{step.title}</p>
-                  <p className="text-[#4E6B65] ml-4">{step.description}</p>
+                  <p className="font-semibold text-neutral-600 mb-2 sm:mb-4 text-sm sm:text-base">{step.title}</p>
+                  <p className="text-xs sm:text-sm text-[#4E6B65] ml-0 sm:ml-4">{step.description}</p>
                 </div>
               </li>
             ))}
