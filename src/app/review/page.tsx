@@ -32,7 +32,7 @@ const ReviewPage = () => {
       {!submitted ? (
         <>
           {/* Header Image Section */}
-          <section className="relative max-w-7xl mx-auto rounded-3xl mt-10 isolate h-80 overflow-hidden  ">
+          <section className="relative max-w-7xl mx-auto sm:rounded-3xl mt-10 isolate h-48 sm:h-64 md:h-80 overflow-hidden  ">
             <div className="absolute inset-0">
               <Image
                 src={tripDetails.image}
@@ -45,8 +45,8 @@ const ReviewPage = () => {
             <div className="absolute inset-0 bg-black/30" />
 
             {/* Centered Title */}
-            <div className="relative z-10 flex h-full items-center justify-center">
-              <h1 className="text-5xl font-medium text-white">
+            <div className="relative z-10 flex h-full items-center justify-center px-4">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-white text-center">
                 {tripDetails.title}
               </h1>
             </div>
@@ -140,7 +140,7 @@ const ReviewPage = () => {
           </section>
         </>
       ) : (
-        <section className="mx-auto mb-20 mt-16 flex w-full max-w-3xl justify-center rounded-2xl bg-gradient-to-b from-[#08347F] to-[#018076]  text-center text-white shadow-[0_40px_80px_-50px_rgba(8,52,127,0.6)]">
+        <section className="mx-auto mb-20 mt-16 flex w-full max-w-3xl justify-center  sm:rounded-3xl bg-gradient-to-b from-[#08347F] to-[#018076]  text-center text-white shadow-[0_40px_80px_-50px_rgba(8,52,127,0.6)]">
           <div
             className="relative w-full rounded-2xl px-6 pb-10 pt-12"
             style={{
@@ -169,11 +169,11 @@ const ReviewPage = () => {
                 </div>
               </div>
 
-              <div className="relative flex justify-center gap-4 my-10">
+              <div className="relative flex justify-center gap-2 sm:gap-4 my-8 sm:my-10 flex-wrap sm:flex-nowrap px-4 sm:px-0">
                 {collageImages.map((img, index) => (
                   <div
                     key={img}
-                    className="overflow-hidden rounded-3xl border border-white/20 bg-white/10 shadow-lg backdrop-blur"
+                    className="overflow-hidden rounded-2xl sm:rounded-3xl border border-white/20 bg-white/10 shadow-lg backdrop-blur"
                     style={{
                       transform: `rotate(${
                         index === 1 ? 0 : index === 0 ? -8 : 8
@@ -185,14 +185,14 @@ const ReviewPage = () => {
                       alt={`Trip memory ${index + 1}`}
                       width={160}
                       height={120}
-                      className="h-32 w-40 object-cover"
+                      className="h-20 w-24 sm:h-32 sm:w-40 object-cover"
                     />
                   </div>
                 ))}
               </div>
 
               <div className="space-y-3">
-                <div className="rounded-2xl bg-white/10 py-6 text-lg leading-10 font-thin text-white/90 backdrop-blur px-40">
+                <div className="rounded-2xl bg-white/10 py-6 text-base sm:text-lg leading-8 sm:leading-10 font-thin text-white/90 backdrop-blur px-6 sm:px-12 md:px-40">
                   RAJASTHAN 2025 WAS UNFORGETTABLE — FROM PALACES TO SUNSETS,
                   EVERY MOMENT WAS MAGICAL!
                   <p className="text-xs text-white/70 mt-4">
