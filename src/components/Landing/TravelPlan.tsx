@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   ChevronRight,
   ChevronDown,
@@ -172,10 +173,7 @@ export default function TravelPlan() {
           <div className="-mx-6 px-6">
             <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory hide-scrollbar">
               {tripCards.map((card, index) => (
-                <div
-                  key={index}
-                  className="relative overflow-hidden rounded-3xl min-w-[16rem] h-[13rem] flex-shrink-0 snap-center"
-                >
+                <Link href="/details" key={index} className="relative overflow-hidden rounded-3xl min-w-[16rem] h-[13rem] flex-shrink-0 snap-center">
                   <Image
                     src={card.image}
                     alt={card.title}
@@ -206,10 +204,10 @@ export default function TravelPlan() {
                     </div>
                   </div>
 
-                  <button className="absolute right-4 bottom-3 h-8 w-8 rounded-full bg-white/80 flex items-center justify-center">
+                  <span className="absolute right-4 bottom-3 h-8 w-8 rounded-full bg-white/80 flex items-center justify-center">
                     <ChevronRight className="w-4 h-4" />
-                  </button>
-                </div>
+                  </span>
+                </Link>
               ))}
             </div>
           </div>
@@ -320,7 +318,8 @@ export default function TravelPlan() {
             onScroll={handleScroll}
           >
             {tripCards.map((card, index) => (
-              <div
+              <Link
+                href="/details"
                 key={index}
                 className="relative overflow-hidden rounded-3xl h-[13rem] md:h-[13rem] flex-shrink-0"
               >
@@ -361,10 +360,10 @@ export default function TravelPlan() {
                 </div>
 
                 {/* CTA */}
-                <button className="absolute right-4 bottom-3 h-8 w-8 rounded-full bg-white/80 flex items-center justify-center">
+                <span className="absolute right-4 bottom-3 h-8 w-8 rounded-full bg-white/80 flex items-center justify-center">
                   <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
+                </span>
+              </Link>
             ))}
           </div>
 

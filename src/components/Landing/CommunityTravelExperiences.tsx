@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useRef } from "react";
 import { ArrowLeft, ArrowRight, Calendar, Clock, Sparkles } from "lucide-react";
 
@@ -77,7 +78,7 @@ export default function CommunityTravelExperiences() {
   };
 
   return (
-    <section className="bg-white py-20">
+    <section id="community" className="bg-white py-20">
       <div className="mx-auto max-w-7xl px-6">
         <h2 className="mb-16 text-center text-4xl font-semibold md:text-5xl">
           Community Travel Experiences
@@ -139,7 +140,8 @@ export default function CommunityTravelExperiences() {
         <div className="md:hidden -mx-6 px-6">
           <div className="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory hide-scrollbar">
             {trips.map((trip) => (
-              <div
+              <Link
+                href="/details"
                 key={trip.title}
                 className="group relative min-w-[16rem] h-[24rem] overflow-hidden rounded-3xl cursor-pointer snap-center"
               >
@@ -174,7 +176,7 @@ export default function CommunityTravelExperiences() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -182,7 +184,8 @@ export default function CommunityTravelExperiences() {
         {/* Desktop grid */}
         <div className="hidden md:grid grid-cols-1 gap-8 md:grid-cols-3">
           {trips.map((trip) => (
-            <div
+            <Link
+              href="/details"
               key={trip.title}
               className="group relative h-[30rem] overflow-hidden rounded-3xl cursor-pointer"
             >
@@ -217,7 +220,7 @@ export default function CommunityTravelExperiences() {
                   </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

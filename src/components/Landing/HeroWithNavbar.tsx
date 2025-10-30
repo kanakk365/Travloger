@@ -6,6 +6,7 @@ import type { ChangeEvent, FormEvent, KeyboardEvent } from "react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion, type MotionProps } from "motion/react";
 import { cn } from "@/lib/utils";
+import { Marquee } from "@/components/ui/marquee";
 
 
 export default function HeroWithNavbar() {
@@ -75,13 +76,13 @@ export default function HeroWithNavbar() {
             Home
           </a>
           <a
-            href="#"
+            href="#destinations"
             className="text-white/80 hover:text-white transition-colors"
           >
             Destinations
           </a>
           <a
-            href="#"
+            href="#community"
             className="text-white/80 hover:text-white transition-colors"
           >
             Packages
@@ -93,7 +94,7 @@ export default function HeroWithNavbar() {
             Blog
           </a>
           <a
-            href="#"
+            href="#why"
             className="text-white/80 hover:text-white transition-colors"
           >
             About
@@ -304,14 +305,14 @@ export default function HeroWithNavbar() {
                 Home
               </a>
               <a
-                href="#"
+                href="#destinations"
                 className="px-6 py-3 text-white  transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Destinations
               </a>
               <a
-                href="#"
+                href="#community"
                 className="px-6 py-3 text-white  transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -325,7 +326,7 @@ export default function HeroWithNavbar() {
                 Blog
               </a>
               <a
-                href="#"
+                href="#why"
                 className="px-6 py-3 text-white  transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -368,7 +369,33 @@ export default function HeroWithNavbar() {
         </motion.div>
       </div>
 
-      <div className="relative z-10 bg-teal-500 py-6">
+      {/* Mobile: marquee strip */}
+      <div className="relative z-10 bg-teal-500 py-3 md:hidden">
+        <Marquee className="[--gap:1.25rem] [--duration:30s]" pauseOnHover={false} repeat={4}>
+          {/* Group repeated by Marquee */}
+          <div className="flex items-center gap-4 text-white">
+            <div className="flex items-center gap-2">
+              <NextImage src="/landing/google.svg" alt="google" width={100} height={100} className="w-5 h-5" />
+              <span className="font-semibold text-xs">4.9 ⭐ Rating</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <NextImage src="/landing/instagram.svg" alt="instagram" width={100} height={100} className="w-5 h-5" />
+              <span className="font-semibold text-xs">240k+ Community</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <NextImage src="/landing/happy.svg" alt="happy" width={32} height={32} className="w-5 h-5" />
+              <span className="font-semibold text-xs">800k+ Happy</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <NextImage src="/landing/Flexible.svg" alt="flexible" width={32} height={32} className="w-5 h-5" />
+              <span className="font-semibold text-xs">Flexible Payment</span>
+            </div>
+          </div>
+        </Marquee>
+      </div>
+
+      {/* Desktop and tablets: static strip */}
+      <div className="relative z-10 bg-teal-500 py-6 hidden md:block">
         <div className="max-w-7xl mx-auto sm:px-6 md:px-10">
           <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 md:gap-8 text-white">
             <div className="flex items-center sm:space-x-2">
@@ -445,7 +472,7 @@ export default function HeroWithNavbar() {
                 className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
               />
               <span className="font-semibold text-xs sm:text-sm md:text-base">Flexible Payment</span>
-          </div>
+            </div>
           </div>
         </div>
       </div>

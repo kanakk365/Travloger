@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
@@ -146,7 +147,7 @@ export default function Destinations() {
   };
 
   return (
-    <section className="w-full bg-white py-24 pt-0">
+    <section id="destinations" className="w-full bg-white py-24 pt-0">
       <div className="mx-auto flex max-w-6xl flex-col items-center px-6 text-center">
         <h2 className="text-3xl font-semibold text-gray-900 sm:text-4xl md:text-5xl">
           Explore all destinations
@@ -213,7 +214,8 @@ export default function Destinations() {
 
           <div className="flex items-center justify-center gap-3 sm:gap-6 overflow-hidden px-4 sm:px-16">
             {visibleDestinations.map((destination, index) => (
-              <div
+              <Link
+                href="/details"
                 key={`${category}-${destination.name}`}
                 className={`flex w-28 flex-col items-center text-center transition-opacity duration-200 sm:w-32 ${
                   isEdgeCard(index) ? "opacity-40" : "opacity-100"
@@ -231,7 +233,7 @@ export default function Destinations() {
                 <p className="mt-4 text-sm font-medium text-gray-700 sm:text-base">
                   {destination.name}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

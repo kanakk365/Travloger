@@ -134,6 +134,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   * {
     @apply border-border outline-ring/50;
   }
@@ -166,7 +169,7 @@
 
 @layer utilities {
   .animate-marquee {
-    animation: marquee 30s linear infinite;
+    animation: marquee var(--duration, 40s) linear infinite;
   }
 
   .pause-marquee:hover .animate-marquee {

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { CalendarDays, Clock3 } from "lucide-react";
 import { Marquee } from "@/components/ui/marquee";
 
@@ -64,9 +65,10 @@ export default function Exclusive() {
           </h2>
         </div>
 
-        <Marquee className="w-full [--gap:1.5rem] sm:[--gap:2.5rem]" pauseOnHover>
+        <Marquee className="w-full [--gap:1.5rem] sm:[--gap:2.5rem] [--duration:60s]" pauseOnHover>
           {tours.map((tour, index) => (
-            <article
+            <Link
+              href="/details"
               key={`${tour.name}-${index}`}
               className="group relative flex-shrink-0 overflow-hidden w-[20rem] sm:w-[28rem] rounded-[24px] sm:rounded-[32px] shadow-[0_20px_45px_rgba(0,0,0,0.35)]"
             >
@@ -98,7 +100,7 @@ export default function Exclusive() {
                   {tour.name}
                 </h3>
               </div>
-            </article>
+            </Link>
           ))}
         </Marquee>
       </div>

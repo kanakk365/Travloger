@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
@@ -26,6 +28,7 @@ const destinations = [
 ];
 
 export default function Explore() {
+  const router = useRouter();
   const [cardOrder, setCardOrder] = useState<number[]>(() =>
     destinations.map((_, index) => index)
   );
@@ -184,38 +187,39 @@ export default function Explore() {
                 <div className="px-8">
                   <div className="hidden sm:grid w-full grid-cols-1 gap-y-16 gap-x-14 sm:grid-cols-2 lg:grid-cols-3 justify-items-center md:mx-auto">
                     {destinations.map((destination) => (
-                      <div
-                        key={destination.name}
-                        className="group relative h-[28rem] w-[23rem] overflow-hidden rounded-3xl shadow-[0px_4px_16px_0px_rgba(0,0,0,0.25)] cursor-pointer"
-                      >
-                        <Image
-                          src={destination.image}
-                          alt={destination.name}
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20rem"
-                          className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/85" />
+                      <Link href="/details" key={destination.name} className="group">
+                        <div
+                          className="relative h-[28rem] w-[23rem] overflow-hidden rounded-3xl shadow-[0px_4px_16px_0px_rgba(0,0,0,0.25)] cursor-pointer"
+                        >
+                          <Image
+                            src={destination.image}
+                            alt={destination.name}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20rem"
+                            className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/85" />
 
-                        <div className="absolute inset-0 flex flex-col">
-                          <div className="flex pt-8 flex-1 items-center justify-center px-9 text-center text-white">
-                            <h3 className="text-2xl font-extrabold tracking-[0.32em] uppercase">
-                              {destination.name}
-                            </h3>
-                          </div>
+                          <div className="absolute inset-0 flex flex-col">
+                            <div className="flex pt-8 flex-1 items-center justify-center px-9 text-center text-white">
+                              <h3 className="text-2xl font-extrabold tracking-[0.32em] uppercase">
+                                {destination.name}
+                              </h3>
+                            </div>
 
-                          <div className="px-9 pb-10">
-                            <div className="flex items-baseline gap-3">
-                              <p className="text-base text-white/65 line-through">
-                                {destination.oldPrice}
-                              </p>
-                              <p className="text-xl font-semibold text-[#FBB429]">
-                                {destination.price}
-                              </p>
+                            <div className="px-9 pb-10">
+                              <div className="flex items-baseline gap-3">
+                                <p className="text-base text-white/65 line-through">
+                                  {destination.oldPrice}
+                                </p>
+                                <p className="text-xl font-semibold text-[#FBB429]">
+                                  {destination.price}
+                                </p>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </Link>
                     ))}
                   </div>
 
@@ -233,6 +237,7 @@ export default function Explore() {
                           key={`${destination.name}-${position}`}
                           className="absolute h-[26rem] w-[19rem] rounded-3xl overflow-hidden shadow-[0px_18px_32px_rgba(0,0,0,0.35)]"
                           style={getCardStyle(position)}
+                          onClick={() => router.push("/details")}
                         >
                           <Image
                             src={destination.image}

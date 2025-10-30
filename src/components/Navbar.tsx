@@ -32,13 +32,13 @@ export default function Navbar() {
           Home
         </Link>
         <Link
-          href="#"
+          href="#destinations"
           className="text-black/80 hover:text-black transition-colors"
         >
           Destinations
         </Link>
         <Link
-          href="#"
+          href="#community"
           className="text-black/80 hover:text-black transition-colors"
         >
           Packages
@@ -50,7 +50,7 @@ export default function Navbar() {
           Blog
         </Link>
         <Link
-          href="#"
+          href="#why"
           className="text-black/80 hover:text-black transition-colors"
         >
           About
@@ -260,14 +260,14 @@ export default function Navbar() {
                 Home
               </Link>
               <Link
-                href="#"
+                href="#destinations"
                 className="px-6 py-3 text-black  transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Destinations
               </Link>
               <Link
-                href="#"
+                href="#community"
                 className="px-6 py-3 text-black  transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -281,7 +281,7 @@ export default function Navbar() {
                 Blog
               </Link>
               <Link
-                href="#"
+                href="#why"
                 className="px-6 py-3 text-black  transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >

@@ -30,7 +30,7 @@ const highlights = [
 
 export default function WhyTravel() {
   return (
-    <section className="bg-white py-24">
+    <section id="why" className="bg-white py-24">
       <div className="mx-auto flex container flex-col gap-16 px-6 sm:px-16">
         <div className="text-center">
           <h2 className=" text-2xl font-semibold text-black sm:text-4xl md:text-[44px]">

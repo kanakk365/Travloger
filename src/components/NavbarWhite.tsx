@@ -32,13 +32,13 @@ export default function NavbarWhite() {
           Home
         </Link>
         <Link
-          href="#"
+          href="#destinations"
           className="text-white/80 hover:text-white transition-colors"
         >
           Destinations
         </Link>
         <Link
-          href="#"
+          href="#community"
           className="text-white/80 hover:text-white transition-colors"
         >
           Packages
@@ -50,7 +50,7 @@ export default function NavbarWhite() {
           Blog
         </Link>
         <Link
-          href="#"
+          href="#why"
           className="text-white/80 hover:text-white transition-colors"
         >
           About
@@ -260,14 +260,14 @@ export default function NavbarWhite() {
                 Home
               </Link>
               <Link
-                href="#"
+                href="#destinations"
                 className="px-6 py-3 text-white  transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Destinations
               </Link>
               <Link
-                href="#"
+                href="#community"
                 className="px-6 py-3 text-white  transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -281,7 +281,7 @@ export default function NavbarWhite() {
                 Blog
               </Link>
               <Link
-                href="#"
+                href="#why"
                 className="px-6 py-3 text-white  transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >

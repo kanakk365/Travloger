@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { Marquee } from "@/components/ui/marquee";
 
@@ -28,7 +29,7 @@ const upcomingTrips = [
 
 function TripCard({ trip }: { trip: typeof upcomingTrips[0] }) {
   return (
-    <div className="relative h-[14rem] w-[20rem] flex-shrink-0 overflow-hidden rounded-3xl sm:h-[18rem] sm:w-[28rem] md:h-[17rem] md:w-7xl">
+    <Link href="/details" className="relative h-[14rem] w-[20rem] flex-shrink-0 overflow-hidden rounded-3xl sm:h-[18rem] sm:w-[28rem] md:h-[17rem] md:w-7xl">
       <Image
         src={trip.image}
         alt={`${trip.destination} landscape`}
@@ -49,7 +50,7 @@ function TripCard({ trip }: { trip: typeof upcomingTrips[0] }) {
           Start From <span className="text-[#ffba08]">{trip.price}/-</span>
         </p>
       </div>
-    </div>
+    </Link>
   );
 }
 
@@ -64,7 +65,7 @@ function UpcomingTrip() {
         <div className="pointer-events-none hidden sm:block absolute inset-y-0 left-0 z-10 w-6 bg-gradient-to-r from-white to-transparent" />
         <div className="pointer-events-none hidden sm:block absolute inset-y-0 right-0 z-10 w-6 bg-gradient-to-l from-white to-transparent" />
 
-        <Marquee className="[--gap:2rem]" pauseOnHover>
+        <Marquee className="[--gap:2rem] [--duration:70s]" pauseOnHover>
           {upcomingTrips.map((trip) => (
             <TripCard key={trip.id} trip={trip} />
           ))}
