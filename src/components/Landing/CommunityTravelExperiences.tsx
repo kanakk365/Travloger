@@ -85,7 +85,7 @@ export default function CommunityTravelExperiences() {
             Community Travel Experiences
           </h2>
           <Link
-            href="/all-trips"
+            href="/all"
             className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors font-medium text-sm md:text-base"
           >
             See All
