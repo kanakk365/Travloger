@@ -1,5 +1,5 @@
 "use client"
-import { Search, Menu, X, User, LogOut, Gift, Ticket, Zap } from "lucide-react";
+import { Search, Menu, X, User, LogOut, Gift, Ticket, Zap, Phone } from "lucide-react";
 import NextImage from "next/image";
 import Link from "next/link";
 import type { ChangeEvent, FormEvent, KeyboardEvent } from "react";
@@ -48,8 +48,8 @@ export default function HeroWithNavbar() {
     []
   );
   return (
-    <div className="relative sm:min-h-screen h-96 font-manrope ">
-      <div className="absolute bg-black/30 sm:min-h-screen h-96 w-full z-10" />
+    <div className="relative sm:min-h-screen h-[600px] font-manrope ">
+      <div className="absolute bg-black/40 sm:min-h-screen h-[600px] w-full z-10" />
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
@@ -58,13 +58,107 @@ export default function HeroWithNavbar() {
       />
 
       <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between sm:px-10 px-2 py-6 bg-transparent">
-        <div className="flex items-center">
+        {/* Desktop Logo - Left */}
+        <div className="hidden md:flex items-center">
           <NextImage
             src="/landing/logo.png"
             alt="logo"
             width={150}
             height={150}
             className="w-16 sm:w-20 md:w-24 lg:w-32 xl:w-36 h-auto"
+          />
+        </div>
+
+        {/* Mobile: User Button - Left */}
+        <div className="md:hidden flex items-center">
+          {isLoggedIn ? (
+            <div className="relative">
+              <button
+                onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                className="p-2 rounded-full hover:bg-white/20 transition-colors"
+              >
+                <div className="w-8 h-8 bg-gradient-to-r from-[#00A99D] to-[#009186] rounded-full flex items-center justify-center">
+                  <User className="w-5 h-5 text-white" />
+                </div>
+              </button>
+
+              {/* User Menu Popover - Mobile */}
+              <AnimatePresence>
+                {isUserMenuOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8, originX: 0, originY: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.2, ease: "easeInOut" }}
+                    className="absolute left-0 mt-2 w-56 bg-white/20 backdrop-blur-lg rounded-lg shadow-lg z-[100]"
+                    style={{ transformOrigin: "top left" }}
+                  >
+                    <div className="flex flex-col py-2">
+                      <Link
+                        href="/trips"
+                        className="px-6 py-3 text-white hover:bg-white/10 transition-colors flex items-center gap-3"
+                        onClick={() => setIsUserMenuOpen(false)}
+                      >
+                        <Ticket className="w-4 h-4" />
+                        Upcoming Trips
+                      </Link>
+                      <button
+                        className="px-6 py-3 text-white hover:bg-white/10 transition-colors flex items-center gap-3 w-full text-left"
+                        onClick={() => setIsUserMenuOpen(false)}
+                      >
+                        <Zap className="w-4 h-4" />
+                        Past Trips
+                      </button>
+                      <button
+                        className="px-6 py-3 text-white hover:bg-white/10 transition-colors flex items-center gap-3 w-full text-left"
+                        onClick={() => setIsUserMenuOpen(false)}
+                      >
+                        <Gift className="w-4 h-4" />
+                        Reward Wheel
+                      </button>
+                      <Link
+                        href="/referral"
+                        className="px-6 py-3 text-white hover:bg-white/10 transition-colors flex items-center gap-3"
+                        onClick={() => setIsUserMenuOpen(false)}
+                      >
+                        <Zap className="w-4 h-4" />
+                        Referral Tracker
+                      </Link>
+                    </div>
+
+                    <div className="p-2 border-t border-white/20">
+                      <button
+                        className="w-full px-6 py-3 text-white hover:bg-white/10 transition-colors flex items-center gap-3 rounded"
+                        onClick={() => {
+                          setIsLoggedIn(false);
+                          setIsUserMenuOpen(false);
+                        }}
+                      >
+                        <LogOut className="w-4 h-4" />
+                        Logout
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ) : (
+            <Link href={"/login"}>
+              <button className="bg-gradient-to-r cursor-pointer text-sm from-[#00A99D] to-[#009186] text-white px-6 py-1.5 flex items-center justify-center rounded-full">
+                Login
+              </button>
+            </Link>
+          )}
+        </div>
+
+        {/* Mobile Logo - Center */}
+        <div className="md:hidden absolute left-1/2 transform -translate-x-1/2">
+          <NextImage
+            src="/landing/logo.png"
+            alt="logo"
+            width={150}
+            height={150}
+            className="w-16 h-auto"
           />
         </div>
 
@@ -87,12 +181,12 @@ export default function HeroWithNavbar() {
           >
             Packages
           </a>
-          <a
+          <Link
             href="/#travel-stories"
             className="text-white/80 hover:text-white transition-colors"
           >
             Blog
-          </a>
+          </Link>
           <a
             href="#why"
             className="text-white/80 hover:text-white transition-colors"
@@ -192,91 +286,19 @@ export default function HeroWithNavbar() {
           )}
         </div>
 
-        {/* Mobile View: Login Button and Menu Button */}
-        <div className="md:hidden flex items-center space-x-2">
-          {isLoggedIn ? (
-            <div className="relative">
-              <button
-                onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                className="p-2 rounded-full hover:bg-white/20 transition-colors"
-              >
-                <div className="w-8 h-8 bg-gradient-to-r from-[#00A99D] to-[#009186] rounded-full flex items-center justify-center">
-                  <User className="w-5 h-5 text-white" />
-                </div>
-              </button>
-
-              {/* User Menu Popover - Mobile */}
-              <AnimatePresence>
-                {isUserMenuOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8, originX: 1, originY: 0 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.2, ease: "easeInOut" }}
-                    className="absolute right-0 mt-2 w-56 bg-white/20 backdrop-blur-lg rounded-lg shadow-lg z-[100]"
-                    style={{ transformOrigin: "top right" }}
-                  >
-                    <div className="flex flex-col py-2">
-                      <Link
-                        href="/trips"
-                        className="px-6 py-3 text-white hover:bg-white/10 transition-colors flex items-center gap-3"
-                        onClick={() => setIsUserMenuOpen(false)}
-                      >
-                        <Ticket className="w-4 h-4" />
-                        Upcoming Trips
-                      </Link>
-                      <button
-                        className="px-6 py-3 text-white hover:bg-white/10 transition-colors flex items-center gap-3 w-full text-left"
-                        onClick={() => setIsUserMenuOpen(false)}
-                      >
-                        <Zap className="w-4 h-4" />
-                        Past Trips
-                      </button>
-                      <button
-                        className="px-6 py-3 text-white hover:bg-white/10 transition-colors flex items-center gap-3 w-full text-left"
-                        onClick={() => setIsUserMenuOpen(false)}
-                      >
-                        <Gift className="w-4 h-4" />
-                        Reward Wheel
-                      </button>
-                      <Link
-                        href="/referral"
-                        className="px-6 py-3 text-white hover:bg-white/10 transition-colors flex items-center gap-3"
-                        onClick={() => setIsUserMenuOpen(false)}
-                      >
-                        <Zap className="w-4 h-4" />
-                        Referral Tracker
-                      </Link>
-                    </div>
-
-                    <div className="p-2 border-t border-white/20">
-                      <button
-                        className="w-full px-6 py-3 text-white hover:bg-white/10 transition-colors flex items-center gap-3 rounded"
-                        onClick={() => {
-                          setIsLoggedIn(false);
-                          setIsUserMenuOpen(false);
-                        }}
-                      >
-                        <LogOut className="w-4 h-4" />
-                        Logout
-                      </button>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          ) : (
-            <Link href={"/login"} >
-              <button className="bg-gradient-to-r cursor-pointer text-sm from-[#00A99D] to-[#009186] text-white px-6 py-1.5 flex items-center justify-center rounded-full">
-                Login
-              </button>
-            </Link>
-          )}
+        {/* Mobile: Phone Icon - Right */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => window.location.href = 'tel:+1234567890'}
+            className="p-2 rounded-full hover:bg-white/20 transition-colors"
+          >
+            <Phone className="w-6 h-6 text-white" />
+          </button>
           
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-white p-2"
+            className="text-white p-2 ml-2"
           >
             <div className={`transition-all duration-300 ease-in-out ${isMenuOpen ? 'scale-110' : 'scale-100'}`}>
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -318,13 +340,13 @@ export default function HeroWithNavbar() {
               >
                 Packages
               </a>
-              <a
+              <Link
                 href="/#travel-stories"
                 className="px-6 py-3 text-white  transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Blog
-              </a>
+              </Link>
               <a
                 href="#why"
                 className="px-6 py-3 text-white  transition-colors"
@@ -346,16 +368,16 @@ export default function HeroWithNavbar() {
         )}
       </AnimatePresence>
 
-      <div className="relative z-10 flex flex-col items-center justify-center sm:min-h-screen h-96 sm:px-6 px-2 text-center pt-20">
+      <div className="relative z-10 flex flex-col items-center justify-center sm:min-h-screen h-[600px] sm:px-6 px-16 text-center pt-20">
         <motion.h1
-          className="text-white text-3xl md:text-6xl sm:font-bold font-semibold sm:mb-12 mb-8 max-w-4xl leading-tight"
+          className="text-white text-2xl md:text-6xl sm:font-bold font-semibold sm:mb-12 mb-8 max-w-4xl leading-tight"
           {...headingAnimation}
         >
           Your Next Memory Starts in
         </motion.h1>
 
         <motion.div
-          className="flex items-center bg-white/20 backdrop-blur-sm rounded-full sm:p-2 p-1.5 w-full sm:max-w-2xl max-w-xs mb-8"
+          className="flex items-center bg-white/20 backdrop-blur-sm rounded-full sm:p-2 p-1 w-full sm:max-w-2xl max-w-[280px] mb-8"
           {...searchAnimation}
         >
           <VanishSearchInput placeholders={vanishPlaceholders} />
@@ -694,8 +716,8 @@ function VanishSearchInput({ placeholders }: VanishSearchInputProps) {
           animating ? "opacity-100" : "opacity-0"
         )}
       />
-      <div className="flex items-center flex-1 sm:px-4 px-2 relative z-20">
-        <Search className="text-white/70 sm:w-5 sm:h-5 w-4 h-4 mr-2 sm:mr-3" />
+      <div className="flex items-center flex-1 sm:px-4 px-1.5 relative z-20">
+        <Search className="text-white/70 sm:w-5 sm:h-5 w-3.5 h-3.5 mr-1.5 sm:mr-3" />
         <input
           ref={inputRef}
           value={value}
@@ -703,7 +725,7 @@ function VanishSearchInput({ placeholders }: VanishSearchInputProps) {
           onKeyDown={handleKeyDown}
           type="text"
           className={cn(
-            "flex-1 bg-transparent border-none text-white placeholder:text-white/70 focus:ring-0 focus:outline-none sm:text-lg text-sm",
+            "flex-1 bg-transparent border-none text-white placeholder:text-white/70 focus:ring-0 focus:outline-none sm:text-lg text-xs",
             animating && "text-transparent"
           )}
         />
@@ -711,7 +733,7 @@ function VanishSearchInput({ placeholders }: VanishSearchInputProps) {
       <button
         type="submit"
         disabled={!value || animating}
-        className="relative z-20 bg-black hover:bg-gray-800 disabled:bg-black/40 disabled:text-neutral-400 text-neutral-300 sm:px-8 px-4 sm:py-2 py-1 text-sm sm:text-base rounded-full"
+        className="relative z-20 bg-black hover:bg-gray-800 disabled:bg-black/40 disabled:text-neutral-400 text-neutral-300 sm:px-8 px-3 sm:py-2 py-1 text-xs sm:text-base rounded-full"
       >
         Search
       </button>
@@ -724,7 +746,7 @@ function VanishSearchInput({ placeholders }: VanishSearchInputProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.3, ease: "linear" }}
-              className="text-white/70 sm:text-lg text-sm pl-11 sm:pl-[3.5rem]"
+              className="text-white/70 sm:text-lg text-xs pl-9 sm:pl-[3.5rem]"
             >
               {placeholders[currentPlaceholder]}
             </motion.span>

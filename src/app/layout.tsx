@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Manrope, Urbanist, Poppins } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/components/LenisProvider";
+import MobileBottomDock from "@/components/MobileBottomDock";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,6 +51,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} ${urbanist.variable} ${poppins.variable} font-manrope antialiased`}
       >
         <LenisProvider>{children}</LenisProvider>
+        <MobileBottomDock />
       </body>
     </html>
   );
