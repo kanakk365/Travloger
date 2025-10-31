@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef } from "react";
-import { ArrowLeft, ArrowRight, Calendar, Clock, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar, Clock, Sparkles, ArrowRight as ArrowRightIcon } from "lucide-react";
 
 const months = [
   { label: "Sep 25", isFeatured: true },
@@ -80,15 +80,25 @@ export default function CommunityTravelExperiences() {
   return (
     <section id="community" className="bg-white py-20">
       <div className="mx-auto max-w-7xl px-6">
-        <h2 className="mb-16 text-center text-4xl font-semibold md:text-5xl">
-          Community Travel Experiences
-        </h2>
+        <div className="mb-16 flex items-center justify-between">
+          <h2 className="text-4xl font-semibold md:text-4xl">
+            Community Travel Experiences
+          </h2>
+          <Link
+            href="/all-trips"
+            className="flex items-center gap-2 text-gray-700 hover:text-black transition-colors font-medium text-sm md:text-base"
+          >
+            See All
+            <ArrowRightIcon className="h-4 w-4 md:h-5 md:w-5" />
+          </Link>
+        </div>
 
         <div className="mb-12 flex items-center justify-center gap-6">
+          {/* Arrow buttons - hidden on mobile, visible on desktop */}
           <button
             onClick={() => scroll("left")}
             disabled={!canScrollLeft}
-            className={`flex h-16 w-16 items-center justify-center rounded-full transition-colors ${
+            className={`hidden md:flex h-16 w-16 items-center justify-center rounded-full transition-colors shrink-0 ${
               canScrollLeft
                 ? "bg-black text-white hover:bg-black/90"
                 : "bg-gray-200 text-gray-400 cursor-not-allowed"
@@ -100,7 +110,7 @@ export default function CommunityTravelExperiences() {
           <div
             ref={scrollRef}
             onScroll={handleScroll}
-            className="flex items-center gap-4 overflow-x-auto hide-scrollbar max-w-4xl"
+            className="flex items-center gap-4 overflow-x-auto hide-scrollbar w-full flex-1 justify-center md:justify-start"
           >
             {months.map((month) => {
               const isSelected = month.label === selectedMonth;
@@ -123,10 +133,11 @@ export default function CommunityTravelExperiences() {
             })}
           </div>
 
+          {/* Arrow buttons - hidden on mobile, visible on desktop */}
           <button
             onClick={() => scroll("right")}
             disabled={!canScrollRight}
-            className={`flex h-16 w-16 items-center justify-center rounded-full transition-colors ${
+            className={`hidden md:flex h-16 w-16 items-center justify-center rounded-full transition-colors shrink-0 ${
               canScrollRight
                 ? "bg-black text-white hover:bg-black/90"
                 : "bg-gray-200 text-gray-400 cursor-not-allowed"

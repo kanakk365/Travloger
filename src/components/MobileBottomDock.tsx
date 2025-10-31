@@ -2,11 +2,14 @@
 import NextImage from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+import MobileSearchModal from "./MobileSearchModal";
 
 export default function MobileBottomDock() {
   const pathname = usePathname();
   const isHomeActive = pathname === "/";
   const isHighlightPage = pathname === "/highlight";
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   // Hide dock on highlight page for full-screen experience
   if (isHighlightPage) return null;
@@ -32,14 +35,7 @@ export default function MobileBottomDock() {
         {/* Search/Filter Icon */}
         <button
           className="flex items-center justify-center p-2 active:opacity-70 transition-opacity"
-          onClick={() => {
-            // Handle search/filter functionality
-            window.scrollTo({ top: 0, behavior: "smooth" });
-            const searchInput = document.querySelector('input[type="text"]') as HTMLInputElement;
-            if (searchInput) {
-              searchInput.focus();
-            }
-          }}
+          onClick={() => setIsSearchOpen(true)}
           aria-label="Search"
         >
           <NextImage
@@ -94,6 +90,9 @@ export default function MobileBottomDock() {
           />
         </a>
       </div>
+      
+      {/* Mobile Search Modal */}
+      <MobileSearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </div>
   );
 }

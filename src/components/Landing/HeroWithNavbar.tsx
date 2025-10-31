@@ -175,12 +175,12 @@ export default function HeroWithNavbar() {
           >
             Destinations
           </a>
-          <a
-            href="#community"
+          <Link
+            href="/group-details"
             className="text-white/80 hover:text-white transition-colors"
           >
-            Packages
-          </a>
+            Group
+          </Link>
           <Link
             href="/#travel-stories"
             className="text-white/80 hover:text-white transition-colors"
@@ -333,13 +333,13 @@ export default function HeroWithNavbar() {
               >
                 Destinations
               </a>
-              <a
-                href="#community"
+              <Link
+                href="/group-details"
                 className="px-6 py-3 text-white  transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Packages
-              </a>
+                Group
+              </Link>
               <Link
                 href="/#travel-stories"
                 className="px-6 py-3 text-white  transition-colors"
@@ -392,7 +392,7 @@ export default function HeroWithNavbar() {
       </div>
 
       {/* Mobile: marquee strip */}
-      <div className="relative z-10 bg-teal-500 py-3 md:hidden">
+      <div className="relative z-10 bg-teal-500 py-1 md:hidden">
         <Marquee className="[--gap:1.25rem] [--duration:30s]" pauseOnHover={false} repeat={4}>
           {/* Group repeated by Marquee */}
           <div className="flex items-center gap-4 text-white">

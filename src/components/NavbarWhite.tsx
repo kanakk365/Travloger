@@ -38,10 +38,10 @@ export default function NavbarWhite() {
           Destinations
         </Link>
         <Link
-          href="#community"
+          href="/group-details"
           className="text-white/80 hover:text-white transition-colors"
         >
-          Packages
+          Group
         </Link>
         <Link
           href="/#travel-stories"
@@ -267,11 +267,11 @@ export default function NavbarWhite() {
                 Destinations
               </Link>
               <Link
-                href="#community"
+                href="/group-details"
                 className="px-6 py-3 text-white  transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Packages
+                Group
               </Link>
               <Link
                 href="/#travel-stories"

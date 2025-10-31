@@ -73,9 +73,9 @@ export default function TravelPlan() {
   };
 
   return (
-    <section className="bg-white sm:mt-16 mt-8 py-16 ">
+    <section className="bg-white sm:mt-16 mt-8 sm:py-16 py-10 ">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl text-center mb-12">
+        <h2 className="text-3xl md:text-5xl text-center mb-12">
           What’s your Travel Plan
         </h2>
 
