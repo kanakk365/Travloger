@@ -2,7 +2,7 @@ import TravelArticleCard from "../ui/TravelArticleCard";
 
 function Travel() {
   return (
-    <section className="bg-white py-8 sm:py-12 md:py-16 min-h-screen">
+    <section id="travel-stories" className="bg-white py-8 sm:py-12 md:py-16 min-h-screen">
       <div className="mx-auto w-full container px-4 sm:px-6 md:px-8 lg:px-16">
         <h2 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-semibold tracking-wide text-slate-900">
           Travel Stories &amp; Guides

@@ -141,7 +141,7 @@ export default function CommunityTravelExperiences() {
           <div className="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory hide-scrollbar">
             {trips.map((trip) => (
               <Link
-                href="/details"
+                href="/group-details"
                 key={trip.title}
                 className="group relative min-w-[16rem] h-[24rem] overflow-hidden rounded-3xl cursor-pointer snap-center"
               >
@@ -185,7 +185,7 @@ export default function CommunityTravelExperiences() {
         <div className="hidden md:grid grid-cols-1 gap-8 md:grid-cols-3">
           {trips.map((trip) => (
             <Link
-              href="/details"
+              href="/group-details"
               key={trip.title}
               className="group relative h-[30rem] overflow-hidden rounded-3xl cursor-pointer"
             >

@@ -44,7 +44,7 @@ export default function NavbarWhite() {
           Packages
         </Link>
         <Link
-          href="#"
+          href="/#travel-stories"
           className="text-white/80 hover:text-white transition-colors"
         >
           Blog
@@ -274,7 +274,7 @@ export default function NavbarWhite() {
                 Packages
               </Link>
               <Link
-                href="#"
+                href="/#travel-stories"
                 className="px-6 py-3 text-white  transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
