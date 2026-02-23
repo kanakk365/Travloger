@@ -1,7 +1,7 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroWithNavbar from "@/components/Landing/HeroWithNavbar";
 import ExploreDestinations from "@/components/Landing/ExploreDestinations";
-import CommunityTravelExperiences from "@/components/Landing/CommunityTravelExperiences";
+import NewCommunityTravelExperiences from "@/components/Landing/NewCommunityTravelExperiences";
 import TravelPlan from "@/components/Landing/TravelPlan";
 import Explore from "@/components/Landing/Explore";
 import UpcomingGroupTrips from "@/components/Landing/UpcomingGroupTrips";
@@ -25,8 +25,12 @@ export default function Home() {
     },
     { key: "upcoming-groups", node: <UpcomingGroupTrips />, delay: 0.1 },
     { key: "explore-banner", node: <ExploreBanner />, delay: 0.12 },
-    { key: "travel-plan", node: <TravelPlan />, delay: 0.15 },
-    { key: "community", node: <CommunityTravelExperiences />, delay: 0.2 },
+    {
+      key: "new-community",
+      node: <NewCommunityTravelExperiences />,
+      delay: 0.15,
+    },
+    { key: "travel-plan", node: <TravelPlan />, delay: 0.2 },
     { key: "explore", node: <Explore />, delay: 0.25 },
     { key: "beyond", node: <BeyondBorders />, delay: 0.3 },
     { key: "destinations", node: <Destinations />, delay: 0.35 },
