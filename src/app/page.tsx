@@ -1,9 +1,11 @@
 import AnimatedSection from "@/components/AnimatedSection";
 import HeroWithNavbar from "@/components/Landing/HeroWithNavbar";
+import ExploreDestinations from "@/components/Landing/ExploreDestinations";
 import CommunityTravelExperiences from "@/components/Landing/CommunityTravelExperiences";
 import TravelPlan from "@/components/Landing/TravelPlan";
 import Explore from "@/components/Landing/Explore";
-import UpcomingTrip from "@/components/Landing/UpcomingTrip";
+import UpcomingGroupTrips from "@/components/Landing/UpcomingGroupTrips";
+import ExploreBanner from "@/components/Landing/ExploreBanner";
 import BeyondBorders from "@/components/Landing/BeyondBorders";
 import Destinations from "@/components/Landing/Destinations";
 import Exclusive from "@/components/Landing/Exclusive";
@@ -16,17 +18,23 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   const animatedSections = [
-    { key: "travel-plan", node: <TravelPlan />, delay: 0.05 },
-    { key: "community", node: <CommunityTravelExperiences />, delay: 0.1 },
-    { key: "explore", node: <Explore />, delay: 0.15 },
-    { key: "upcoming", node: <UpcomingTrip />, delay: 0.2 },
-    { key: "beyond", node: <BeyondBorders />, delay: 0.25 },
-    { key: "destinations", node: <Destinations />, delay: 0.3 },
-    { key: "exclusive", node: <Exclusive />, delay: 0.35 },
-    { key: "real", node: <Real />, delay: 0.4 },
-    { key: "why", node: <WhyTravel />, delay: 0.45 },
-    { key: "companies", node: <Companies />, delay: 0.5 },
-    { key: "travel", node: <Travel />, delay: 0.55 },
+    {
+      key: "explore-destinations",
+      node: <ExploreDestinations />,
+      delay: 0.05,
+    },
+    { key: "upcoming-groups", node: <UpcomingGroupTrips />, delay: 0.1 },
+    { key: "explore-banner", node: <ExploreBanner />, delay: 0.12 },
+    { key: "travel-plan", node: <TravelPlan />, delay: 0.15 },
+    { key: "community", node: <CommunityTravelExperiences />, delay: 0.2 },
+    { key: "explore", node: <Explore />, delay: 0.25 },
+    { key: "beyond", node: <BeyondBorders />, delay: 0.3 },
+    { key: "destinations", node: <Destinations />, delay: 0.35 },
+    { key: "exclusive", node: <Exclusive />, delay: 0.4 },
+    { key: "real", node: <Real />, delay: 0.45 },
+    { key: "why", node: <WhyTravel />, delay: 0.5 },
+    { key: "companies", node: <Companies />, delay: 0.55 },
+    { key: "travel", node: <Travel />, delay: 0.6 },
   ];
 
   return (
