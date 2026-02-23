@@ -9,27 +9,30 @@ const upcomingTrips = [
     destination: "Ladakh",
     tagline: "Oxygen levels low. Adventure levels: sky high.",
     price: "₹18,999",
-    image: "/landing/ladakhMountain.png"
+    image: "/landing/ladakhMountain.png",
   },
   {
     id: 2,
     destination: "Ladakh",
     tagline: "Oxygen levels low. Adventure levels: sky high.",
     price: "₹18,999",
-    image: "/landing/ladakhMountain.png"
+    image: "/landing/ladakhMountain.png",
   },
   {
     id: 3,
     destination: "Ladakh",
     tagline: "Oxygen levels low. Adventure levels: sky high.",
     price: "₹18,999",
-    image: "/landing/ladakhMountain.png"
+    image: "/landing/ladakhMountain.png",
   },
 ];
 
-function TripCard({ trip }: { trip: typeof upcomingTrips[0] }) {
+function TripCard({ trip }: { trip: (typeof upcomingTrips)[0] }) {
   return (
-    <Link href="/details" className="relative h-[14rem] w-[20rem] flex-shrink-0 overflow-hidden rounded-3xl sm:h-[18rem] sm:w-[28rem] md:h-[17rem] md:w-7xl">
+    <Link
+      href="/details"
+      className="relative h-[14rem] w-[20rem] flex-shrink-0 overflow-hidden rounded-3xl sm:h-[18rem] sm:w-[28rem] md:h-[17rem] md:w-7xl"
+    >
       <Image
         src={trip.image}
         alt={`${trip.destination} landscape`}
@@ -42,7 +45,9 @@ function TripCard({ trip }: { trip: typeof upcomingTrips[0] }) {
       <div className="absolute inset-0 bg-black/50"></div>
 
       <div className="absolute inset-y-0 left-0 flex flex-col justify-end pb-6 gap-2 px-6 text-white sm:pb-10 sm:gap-3 sm:px-8 md:px-4">
-        <p className="text-sm text-white/85 sm:text-lg md:text-2xl">{trip.destination}</p>
+        <p className="text-sm text-white/85 sm:text-lg md:text-2xl">
+          {trip.destination}
+        </p>
         <h3 className="text-base font-semibold sm:text-2xl md:text-3xl">
           {trip.tagline}
         </h3>
@@ -57,7 +62,7 @@ function TripCard({ trip }: { trip: typeof upcomingTrips[0] }) {
 function UpcomingTrip() {
   return (
     <section className="mx-auto w-full px-6">
-      <h2 className="text-center text-4xl font-semibold mb-16 tracking-widest text-slate-900 sm:text-4xl md:text-[2.75rem]">
+      <h2 className="text-3xl sm:text-4xl md:text-[44px] tracking-widest text-[#0a0a0a] uppercase mb-16 font-[family-name:var(--font-vollkorn-sc),_serif] font-medium text-center">
         Best Upcoming Trips
       </h2>
 

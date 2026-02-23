@@ -4,6 +4,7 @@ import ExploreDestinations from "@/components/Landing/ExploreDestinations";
 import NewCommunityTravelExperiences from "@/components/Landing/NewCommunityTravelExperiences";
 import TravelPlan from "@/components/Landing/TravelPlan";
 import Explore from "@/components/Landing/Explore";
+import UpcomingTrip from "@/components/Landing/UpcomingTrip";
 import UpcomingGroupTrips from "@/components/Landing/UpcomingGroupTrips";
 import ExploreBanner from "@/components/Landing/ExploreBanner";
 import BeyondBorders from "@/components/Landing/BeyondBorders";
@@ -31,6 +32,7 @@ export default function Home() {
       delay: 0.15,
     },
     { key: "explore", node: <Explore />, delay: 0.25 },
+    { key: "upcoming-trip", node: <UpcomingTrip />, delay: 0.28 },
     { key: "beyond", node: <BeyondBorders />, delay: 0.3 },
     { key: "destinations", node: <Destinations />, delay: 0.35 },
     { key: "exclusive", node: <Exclusive />, delay: 0.4 },
