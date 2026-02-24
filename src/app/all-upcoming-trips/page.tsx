@@ -13,21 +13,31 @@ export default function AllUpcomingTripsPage() {
   const animatedSections = [
     { key: "upcoming-trips", node: <AllUpcomingTripsContent />, delay: 0 },
     { key: "reviews", node: <Reviews />, delay: 0.1 },
-    { key: "why-choose", node: <WhyChoose />, delay: 0.2 },
     { key: "faq", node: <FAQ />, delay: 0.3 },
     { key: "real", node: <Real />, delay: 0.4 },
     { key: "photographs", node: <Photographs />, delay: 0.5 },
   ];
 
   return (
-    <div className="bg-[#f9fafc] min-h-screen font-manrope overflow-x-hidden">
+    <div className="bg-[#f9fafc] min-h-screen font-manrope">
       <NewNavbar />
 
-      {animatedSections.map(({ key, node, delay }) => (
-        <AnimatedSection key={key} delay={delay}>
-          {node}
-        </AnimatedSection>
-      ))}
+      {animatedSections.map(({ key, node, delay }) => {
+        if (key === "reviews") {
+          return (
+            <React.Fragment key={key}>
+              <AnimatedSection delay={delay}>{node}</AnimatedSection>
+              {/* Place WhyChoose immediately after Reviews without AnimatedSection mapping */}
+              <WhyChoose />
+            </React.Fragment>
+          );
+        }
+        return (
+          <AnimatedSection key={key} delay={delay}>
+            {node}
+          </AnimatedSection>
+        );
+      })}
 
       <Footer />
     </div>
