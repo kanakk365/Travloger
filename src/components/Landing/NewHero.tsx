@@ -26,7 +26,7 @@ export default function NewHero() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative w-full lg:min-h-[650px] md:min-h-[600px] sm:min-h-[550px] min-h-[480px] flex items-center justify-center overflow-hidden">
+      <div className="relative w-full lg:min-h-[850px] md:min-h-[750px] sm:min-h-[650px] min-h-[550px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/landing/herobg.png')" }}

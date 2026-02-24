@@ -5,12 +5,19 @@ interface TravelArticleCardProps {
   title: string;
   image: string;
   priority?: boolean;
-  className:string
+  className: string;
 }
 
-function TravelArticleCard({ title, image, priority = false , className }: TravelArticleCardProps) {
+function TravelArticleCard({
+  title,
+  image,
+  priority = false,
+  className,
+}: TravelArticleCardProps) {
   return (
-    <article className = {`group relative overflow-hidden rounded-[28px] h-full bg-slate-900 min-h-[20rem]  ${className }`} >
+    <article
+      className={`group relative overflow-hidden rounded-[28px] h-full bg-slate-900 min-h-[20rem]  ${className}`}
+    >
       <Image
         src={image}
         alt={title}
@@ -29,7 +36,7 @@ function TravelArticleCard({ title, image, priority = false , className }: Trave
           </span>
         </div>
 
-        <p className="max-w-[20ch] text-2xl font-semibold leading-loose text-white sm:text-xl">
+        <p className="max-w-[20ch] text-[22px] font-semibold leading-snug text-white sm:text-2xl">
           {title}
         </p>
       </div>

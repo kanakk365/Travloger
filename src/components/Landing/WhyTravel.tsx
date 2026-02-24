@@ -96,26 +96,27 @@ export default function WhyTravel() {
             ))}
           </div>
         </div>
-        <div className="px-2 sm:px-20 container relative mt-20 h-[18rem] sm:h-[20rem] md:h-[22rem] mx-auto overflow-hidden rounded-xl sm:rounded-4xl">
+        <div className="relative mt-20 h-auto sm:h-[400px] w-full mx-auto overflow-hidden rounded-[40px]">
           <Image
             src="/landing/boat.png"
-            alt="Ladakh mountain range"
+            alt="People rafting in a river"
             fill
             priority
             className="object-cover object-center"
           />
 
-          <div className="absolute inset-0 bg-[linear-gradient(269.83deg,_rgba(96,96,96,0)_-17.48%,_#000000_116.05%)]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
 
-          <div className="absolute inset-y-0 left-0 flex flex-col justify-end pb-6 sm:pb-10 gap-2 sm:gap-3 px-4 sm:px-12 md:px-16 text-white">
-            <p className="text-sm sm:text-lg text-white/85 ">
+          <div className="absolute inset-y-0 left-0 flex flex-col justify-center gap-6 p-8 sm:p-14 md:p-20 text-white w-full sm:max-w-[70%] lg:max-w-[55%]">
+            <h2 className="text-3xl sm:text-4xl md:text-[44px] font-medium leading-tight">
               Travelling with 8 or more ?
+            </h2>
+            <p className="text-base sm:text-xl font-normal text-white/90 leading-relaxed max-w-[480px]">
+              Enjoy a free photographer on your trip or unlock up to{" "}
+              <span className="font-bold text-white">40%</span> off as the trip
+              planner.
             </p>
-            <h3 className="text-base sm:text-2xl font-semibold ">
-              Enjoy a free photographer on your trip or unlock up to 40% off as
-              the trip planner.
-            </h3>
-            <button className="mt-2 sm:mt-3 bg-teal-500 hover:bg-teal-600 text-white border border-teal-500 px-4 sm:px-6 py-1 rounded-full w-32 sm:w-40 text-sm sm:text-base">
+            <button className="mt-4 bg-[#0aa699] hover:bg-[#099587] transition-colors text-white px-8 py-3.5 rounded-full w-fit text-[17px] font-medium shadow-[0_8px_20px_rgba(10,166,153,0.3)]">
               Plan my trip
             </button>
           </div>

@@ -61,7 +61,7 @@ function TripCard({ trip }: { trip: (typeof upcomingTrips)[0] }) {
 
 function UpcomingTrip() {
   return (
-    <section className="mx-auto w-full px-6">
+    <section className="max-w-7xl mx-auto w-full px-6">
       <h2 className="text-3xl sm:text-4xl md:text-[44px] tracking-widest text-[#0a0a0a] uppercase mb-16 font-[family-name:var(--font-vollkorn-sc),_serif] font-medium text-center">
         Best Upcoming Trips
       </h2>

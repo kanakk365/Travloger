@@ -53,7 +53,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="w-full px-4 sm:px-6 md:px-10 lg:px-20 py-24 bg-[linear-gradient(92.48deg,#000000_-22.48%,#323232_79.48%)]">
+    <section className="w-full px-4 sm:px-6 md:px-10 lg:px-20 py-32 md:py-40 lg:py-48 bg-[linear-gradient(92.48deg,#000000_-22.48%,#323232_79.48%)]">
       <div className="max-w-7xl mx-auto flex flex-col items-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl tracking-[0.1em] text-white uppercase mb-16 font-[family-name:var(--font-vollkorn-sc),_serif] font-medium text-center drop-shadow-sm">
           Frequently Ask Questions

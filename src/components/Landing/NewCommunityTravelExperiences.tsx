@@ -72,7 +72,7 @@ export default function NewCommunityTravelExperiences() {
 
   return (
     <section className="w-full bg-white px-4 sm:px-6 md:px-10 lg:px-[80px] py-16">
-      <div className="max-w-[1400px] mx-auto flex flex-col items-center text-center">
+      <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
         <h2 className="text-3xl sm:text-4xl md:text-[44px] tracking-widest text-[#0a0a0a] uppercase mb-10 font-[family-name:var(--font-vollkorn-sc),_serif] font-medium">
           Community Travel Experiences
         </h2>

@@ -1,7 +1,5 @@
 import Image from "next/image";
 
-import { Marquee } from "@/components/ui/marquee";
-
 const companies = [
   { name: "Microsoft", logo: "/landing/microsoft.png" },
   { name: "Amazon", logo: "/landing/amazon.png" },
@@ -14,32 +12,25 @@ export default function Companies() {
   return (
     <section className="bg-white py-16 sm:py-24">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 text-center">
-        <div className="flex flex-col gap-3">
-          <h2 className="text-2xl sm:text-4xl font-semibold leading-loose text-neutral-900 md:text-6xl">
-            Companies that trust us
-          </h2>
-        </div>
+        <h2 className="text-3xl sm:text-4xl md:text-[44px] tracking-widest text-[#0a0a0a] uppercase mb-4 sm:mb-8 font-[family-name:var(--font-vollkorn-sc),_serif] font-medium text-center">
+          Companies that trust us
+        </h2>
 
-        <div className="relative mt-4 w-full overflow-hidden">
-          <div className="pointer-events-none hidden sm:block absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent sm:w-24" />
-          <div className="pointer-events-none hidden sm:block absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent sm:w-24" />
-
-          <Marquee className="[--gap:1.5rem] sm:[--gap:3rem]" pauseOnHover>
-            {companies.map((company) => (
-              <article
-                key={company.name}
-                className="w-28 sm:w-40 flex items-center justify-center rounded-2xl text-base font-semibold text-neutral-500"
-              >
-                <Image
-                  src={company.logo}
-                  alt={`${company.name} logo`}
-                  width={96}
-                  height={32}
-                  className="h-6 sm:h-8 w-auto"
-                />
-              </article>
-            ))}
-          </Marquee>
+        <div className="mt-8 flex w-full flex-wrap items-center justify-center gap-10 md:justify-between px-2 sm:px-6">
+          {companies.map((company) => (
+            <article
+              key={company.name}
+              className="flex items-center justify-center flex-shrink-0 transition-transform duration-300 hover:scale-105"
+            >
+              <Image
+                src={company.logo}
+                alt={`${company.name} logo`}
+                width={140}
+                height={40}
+                className="h-6 sm:h-7 md:h-8 w-auto object-contain"
+              />
+            </article>
+          ))}
         </div>
       </div>
     </section>
