@@ -458,14 +458,14 @@ export default function NewNavbar() {
               strokeWidth={2.5}
             />
           </div>
-          <div className="flex items-center gap-[6px] cursor-pointer hover:text-[#0aa699] transition-colors whitespace-nowrap">
+          <Link href="/all-upcoming-trips" className="flex items-center gap-[6px] cursor-pointer hover:text-[#0aa699] transition-colors whitespace-nowrap">
             <span className="text-base leading-none">👥</span> Upcoming Group
             Trips{" "}
             <ChevronDown
               className="w-3.5 h-3.5 text-gray-500 mt-[2px]"
               strokeWidth={2.5}
             />
-          </div>
+          </Link>
           <div className="flex items-center gap-[6px] cursor-pointer hover:text-[#0aa699] transition-colors whitespace-nowrap">
             <span className="text-base leading-none">🚗</span> Weekend Trips{" "}
             <ChevronDown
