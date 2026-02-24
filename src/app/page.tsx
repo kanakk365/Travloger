@@ -35,9 +35,8 @@ export default function Home() {
     { key: "upcoming-trip", node: <UpcomingTrip />, delay: 0.28 },
     { key: "beyond", node: <BeyondBorders />, delay: 0.3 },
     { key: "faq", node: <FAQ />, delay: 0.32 },
-        { key: "real", node: <Real />, delay: 0.45 },
+    { key: "real", node: <Real />, delay: 0.45 },
     { key: "exclusive", node: <Exclusive />, delay: 0.4 },
-
     { key: "why", node: <WhyTravel />, delay: 0.5 },
     { key: "companies", node: <Companies />, delay: 0.55 },
     { key: "travel", node: <Travel />, delay: 0.6 },
