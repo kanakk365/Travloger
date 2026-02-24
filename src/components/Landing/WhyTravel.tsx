@@ -32,8 +32,8 @@ export default function WhyTravel() {
   return (
     <section id="why" className="bg-white py-24">
       <div className="mx-auto flex container flex-col gap-16 px-6 sm:px-16">
-        <div className="text-center">
-          <h2 className=" text-2xl font-semibold text-black sm:text-4xl md:text-[44px]">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl uppercase tracking-[0.1em] text-black font-[family-name:var(--font-vollkorn-sc),_serif] font-medium">
             Why Travel with Travloger?
           </h2>
         </div>
@@ -85,8 +85,12 @@ export default function WhyTravel() {
                   <Icon className="h-6 sm:h-8 w-6 sm:w-8" strokeWidth={1.6} />
                 </div>
                 <div className="space-y-2">
-                  <h3 className="text-lg sm:text-2xl font-semibold text-black">{title}</h3>
-                  <p className="text-sm sm:text-base text-slate-600">{description}</p>
+                  <h3 className="text-lg sm:text-2xl font-semibold text-black">
+                    {title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-slate-600">
+                    {description}
+                  </p>
                 </div>
               </article>
             ))}

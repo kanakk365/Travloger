@@ -9,9 +9,10 @@ import ExploreBanner from "@/components/Landing/ExploreBanner";
 import BeyondBorders from "@/components/Landing/BeyondBorders";
 import Destinations from "@/components/Landing/Destinations";
 import Exclusive from "@/components/Landing/Exclusive";
+import WhyChoose from "@/components/Landing/WhyChoose";
 import Real from "@/components/Landing/Real";
-import WhyTravel from "@/components/Landing/WhyTravel";
 import Companies from "@/components/Landing/Companies";
+import WhyTravel from "@/components/Landing/WhyTravel";
 import Travel from "@/components/Landing/Travel";
 import Photographs from "@/components/Landing/Photographs";
 import FAQ from "@/components/Landing/FAQ";
@@ -37,6 +38,7 @@ export default function Home() {
     { key: "faq", node: <FAQ />, delay: 0.32 },
     { key: "real", node: <Real />, delay: 0.45 },
     { key: "exclusive", node: <Exclusive />, delay: 0.4 },
+    { key: "why-choose", node: <WhyChoose />, delay: 0.42 },
     { key: "why", node: <WhyTravel />, delay: 0.5 },
     { key: "companies", node: <Companies />, delay: 0.55 },
     { key: "travel", node: <Travel />, delay: 0.6 },
