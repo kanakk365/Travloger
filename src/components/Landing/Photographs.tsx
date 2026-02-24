@@ -6,8 +6,7 @@ import { useEffect, useRef, useState } from "react";
 const photoCards = [
   {
     id: 1,
-    image:
-      "/landing/photo1.png",
+    image: "/landing/photo1.png",
     likes: "1,688",
     badge: "Most Liked",
     badgeClasses: "bg-teal-300 text-slate-900",
@@ -16,15 +15,13 @@ const photoCards = [
   },
   {
     id: 2,
-    image:
-      "/landing/photo2.png",
+    image: "/landing/photo2.png",
     likes: "1,688",
     heartClasses: "text-white",
   },
   {
     id: 3,
-    image:
-      "/landing/photo3.png",
+    image: "/landing/photo3.png",
     likes: "1,688",
     heartClasses: "text-white",
   },
@@ -32,7 +29,7 @@ const photoCards = [
 
 function Photographs() {
   const [cardOrder, setCardOrder] = useState<number[]>(() =>
-    photoCards.map((_, index) => index)
+    photoCards.map((_, index) => index),
   );
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -79,7 +76,8 @@ function Photographs() {
     const deltaX = touch.clientX - touchStartX.current;
 
     if (!isSwiping.current) {
-      const horizontal = Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10;
+      const horizontal =
+        Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10;
       const vertical = Math.abs(deltaY) > 10;
 
       if (horizontal) {
@@ -164,7 +162,7 @@ function Photographs() {
   return (
     <section className="w-full bg-gradient-to-b from-[#2C2C2C] to-black py-16 ">
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-6">
-        <h2 className="text-center text-3xl font-semibold text-white sm:text-4xl md:text-5xl">
+        <h2 className="text-3xl sm:text-4xl md:text-[44px] tracking-widest text-white uppercase font-[family-name:var(--font-vollkorn-sc),_serif] font-medium text-center">
           Best Trip photographs
         </h2>
 
@@ -230,7 +228,7 @@ function Photographs() {
                   </div>
                 </div>
               </article>
-            )
+            ),
           )}
         </div>
 
