@@ -169,7 +169,11 @@
 
 @layer utilities {
   .animate-marquee {
-    animation: marquee var(--duration, 40s) linear infinite;
+    animation: marquee var(--duration, 40s) linear infinite var(--animation-direction, normal);
+  }
+
+  .animate-marquee-vertical {
+    animation: marquee-vertical var(--duration, 40s) linear infinite var(--animation-direction, normal);
   }
 
   .pause-marquee:hover .animate-marquee {

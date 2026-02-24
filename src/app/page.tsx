@@ -16,6 +16,7 @@ import WhyTravel from "@/components/Landing/WhyTravel";
 import Travel from "@/components/Landing/Travel";
 import Photographs from "@/components/Landing/Photographs";
 import FAQ from "@/components/Landing/FAQ";
+import Reviews from "@/components/Landing/Reviews";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -36,6 +37,7 @@ export default function Home() {
     { key: "upcoming-trip", node: <UpcomingTrip />, delay: 0.28 },
     { key: "beyond", node: <BeyondBorders />, delay: 0.3 },
     { key: "faq", node: <FAQ />, delay: 0.32 },
+    { key: "reviews", node: <Reviews />, delay: 0.35 },
     { key: "real", node: <Real />, delay: 0.45 },
     { key: "exclusive", node: <Exclusive />, delay: 0.4 },
     { key: "why-choose", node: <WhyChoose />, delay: 0.42 },
