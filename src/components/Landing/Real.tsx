@@ -44,7 +44,9 @@ const stories = [
 
 export default function Real() {
   const router = useRouter();
-  const [cardOrder, setCardOrder] = useState<number[]>(() => stories.map((_, i) => i));
+  const [cardOrder, setCardOrder] = useState<number[]>(() =>
+    stories.map((_, i) => i),
+  );
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -85,7 +87,8 @@ export default function Real() {
     const deltaX = touch.clientX - touchStartX.current;
 
     if (!isSwiping.current) {
-      const horizontal = Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10;
+      const horizontal =
+        Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10;
       const vertical = Math.abs(deltaY) > 10;
 
       if (horizontal) {
@@ -169,7 +172,7 @@ export default function Real() {
   return (
     <section className="bg-white py-24">
       <div className="mx-auto flex w-full flex-col items-center gap-14 px-6 text-center">
-        <h2 className="font-poppins text-3xl font-semibold text-black sm:text-4xl md:text-[44px]">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl uppercase tracking-[0.1em] text-black font-[family-name:var(--font-vollkorn-sc),_serif] font-medium">
           Real Stories. Real Memories.
         </h2>
 

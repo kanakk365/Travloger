@@ -2,7 +2,6 @@ import AnimatedSection from "@/components/AnimatedSection";
 import HeroWithNavbar from "@/components/Landing/HeroWithNavbar";
 import ExploreDestinations from "@/components/Landing/ExploreDestinations";
 import NewCommunityTravelExperiences from "@/components/Landing/NewCommunityTravelExperiences";
-import TravelPlan from "@/components/Landing/TravelPlan";
 import Explore from "@/components/Landing/Explore";
 import UpcomingTrip from "@/components/Landing/UpcomingTrip";
 import UpcomingGroupTrips from "@/components/Landing/UpcomingGroupTrips";
@@ -15,6 +14,7 @@ import WhyTravel from "@/components/Landing/WhyTravel";
 import Companies from "@/components/Landing/Companies";
 import Travel from "@/components/Landing/Travel";
 import Photographs from "@/components/Landing/Photographs";
+import FAQ from "@/components/Landing/FAQ";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -34,9 +34,10 @@ export default function Home() {
     { key: "explore", node: <Explore />, delay: 0.25 },
     { key: "upcoming-trip", node: <UpcomingTrip />, delay: 0.28 },
     { key: "beyond", node: <BeyondBorders />, delay: 0.3 },
-    { key: "destinations", node: <Destinations />, delay: 0.35 },
+    { key: "faq", node: <FAQ />, delay: 0.32 },
+        { key: "real", node: <Real />, delay: 0.45 },
     { key: "exclusive", node: <Exclusive />, delay: 0.4 },
-    { key: "real", node: <Real />, delay: 0.45 },
+
     { key: "why", node: <WhyTravel />, delay: 0.5 },
     { key: "companies", node: <Companies />, delay: 0.55 },
     { key: "travel", node: <Travel />, delay: 0.6 },
