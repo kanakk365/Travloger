@@ -30,7 +30,7 @@ const destinations = [
 export default function BeyondBorders() {
   const router = useRouter();
   const [cardOrder, setCardOrder] = useState<number[]>(() =>
-    destinations.map((_, index) => index)
+    destinations.map((_, index) => index),
   );
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -77,7 +77,8 @@ export default function BeyondBorders() {
     const deltaX = touch.clientX - touchStartX.current;
 
     if (!isSwiping.current) {
-      const horizontal = Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10;
+      const horizontal =
+        Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10;
       const vertical = Math.abs(deltaY) > 10;
 
       if (horizontal) {
@@ -185,37 +186,34 @@ export default function BeyondBorders() {
                 </button>
 
                 <div className="px-8">
-                  <div className="hidden sm:grid w-full grid-cols-1 gap-y-16 gap-x-14 sm:grid-cols-2 lg:grid-cols-3 justify-items-center md:mx-auto">
+                  <div className="hidden sm:grid w-full max-w-[1000px] xl:max-w-[1100px] mx-auto grid-cols-1 gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
                     {destinations.map((destination) => (
-                      <Link href="/details" key={destination.name} className="group">
-                        <div
-                          className="relative h-[28rem] w-[23rem] overflow-hidden rounded-3xl shadow-[0px_4px_16px_0px_rgba(0,0,0,0.25)] group cursor-pointer"
-                        >
+                      <Link
+                        href="/details"
+                        key={destination.name}
+                        className="w-full group"
+                      >
+                        <div className="relative w-full aspect-[4/5] overflow-hidden rounded-[24px] shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-transform duration-300 cursor-pointer">
                           <Image
                             src={destination.image}
                             alt={destination.name}
                             fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 20rem"
-                            className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/85" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
-                          <div className="absolute inset-0 flex flex-col">
-                            <div className="flex pt-8 flex-1 items-center justify-center px-9 text-center text-white">
-                              <h3 className="text-2xl font-extrabold tracking-[0.32em] uppercase">
-                                {destination.name}
-                              </h3>
-                            </div>
-
-                            <div className="px-9 pb-10">
-                              <div className="flex items-baseline gap-3">
-                                <p className="text-base text-white/65 line-through">
-                                  {destination.oldPrice}
-                                </p>
-                                <p className="text-xl font-semibold text-[#FBB429]">
-                                  {destination.price}
-                                </p>
-                              </div>
+                          <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 flex flex-col items-center">
+                            <h3 className="text-white text-[24px] md:text-[28px] font-[800] tracking-[0.32em] uppercase text-center mb-1.5 leading-tight">
+                              {destination.name}
+                            </h3>
+                            <div className="flex items-center justify-center gap-[10px]">
+                              <span className="text-white/70 text-[13px] line-through font-medium tracking-wide">
+                                {destination.oldPrice}
+                              </span>
+                              <span className="text-[#FBB429] text-[14px] font-[700] tracking-wide">
+                                {destination.price}
+                              </span>
                             </div>
                           </div>
                         </div>
