@@ -27,7 +27,6 @@ export default function AllUpcomingTripsPage() {
           return (
             <React.Fragment key={key}>
               <AnimatedSection delay={delay}>{node}</AnimatedSection>
-              {/* Place WhyChoose immediately after Reviews without AnimatedSection mapping */}
               <WhyChoose />
             </React.Fragment>
           );

@@ -2,7 +2,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef } from "react";
-import { ArrowLeft, ArrowRight, Calendar, Clock, Sparkles, ArrowRight as ArrowRightIcon } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Calendar,
+  Clock,
+  Sparkles,
+  ArrowRight as ArrowRightIcon,
+} from "lucide-react";
 
 const months = [
   { label: "Sep 25", isFeatured: true },
@@ -79,8 +86,8 @@ export default function CommunityTravelExperiences() {
 
   return (
     <section id="community" className="bg-white py-20">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-16 flex items-center justify-between">
+      <div className="w-full flex flex-col items-start px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div className="w-full mb-16 flex items-center justify-between">
           <h2 className="text-4xl font-semibold md:text-4xl">
             Community Travel Experiences
           </h2>
@@ -93,7 +100,7 @@ export default function CommunityTravelExperiences() {
           </Link>
         </div>
 
-        <div className="mb-12 flex items-center justify-center gap-6">
+        <div className="w-full mb-12 flex items-center justify-center gap-6">
           {/* Arrow buttons - hidden on mobile, visible on desktop */}
           <button
             onClick={() => scroll("left")}
@@ -122,8 +129,8 @@ export default function CommunityTravelExperiences() {
                     isSelected
                       ? "border-[#02A589] bg-gradient-to-r from-[#00A99D] to-[#009186] text-white"
                       : month.isMuted
-                      ? "border-gray-200 bg-white text-gray-400"
-                      : "border-black/10 bg-white text-gray-900 hover:border-black/30"
+                        ? "border-gray-200 bg-white text-gray-400"
+                        : "border-black/10 bg-white text-gray-900 hover:border-black/30"
                   }`}
                 >
                   {isSelected && <Sparkles className="h-4 w-4" />}
@@ -192,8 +199,7 @@ export default function CommunityTravelExperiences() {
           </div>
         </div>
 
-        {/* Desktop grid */}
-        <div className="hidden md:grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="hidden w-full md:grid grid-cols-1 gap-8 md:grid-cols-3">
           {trips.map((trip) => (
             <Link
               href="/group-details"

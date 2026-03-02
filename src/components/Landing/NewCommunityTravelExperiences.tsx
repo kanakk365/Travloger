@@ -45,6 +45,36 @@ const trips: Trip[] = [
     description: "Enjoy the scenic views of the valley of the Ladhak , Montse.",
     price: "₹ 56,000",
   },
+  {
+    title: "10 days In Kerala",
+    image:
+      "https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=600&q=80",
+    location: "India",
+    duration: "9 nights 10 days",
+    dates: ["Sep 15", "Oct 10", "Nov 05"],
+    description: "Enjoy the scenic backwaters and lush greenery of Kerala.",
+    price: "₹ 45,000",
+  },
+  {
+    title: "7 days In Dubai",
+    image:
+      "https://images.unsplash.com/photo-1512453979436-5a0045f8f8ed?auto=format&fit=crop&w=600&q=80",
+    location: "UAE",
+    duration: "6 nights 7 days",
+    dates: ["Dec 01", "Dec 15", "Jan 05"],
+    description: "Experience the luxury and modern architecture of Dubai.",
+    price: "₹ 65,000",
+  },
+  {
+    title: "6 days In Meghalaya",
+    image:
+      "https://images.unsplash.com/photo-1571536802807-6c2e17666ed8?auto=format&fit=crop&w=600&q=80",
+    location: "India",
+    duration: "5 nights 6 days",
+    dates: ["Jul 20", "Aug 15", "Sep 10"],
+    description: "Explore the breathtaking waterfalls and living root bridges.",
+    price: "₹ 38,000",
+  },
 ];
 
 const tabs = ["SEP 25", "OCT 25", "NOV 25", "DEC 25", "JAN 26"];
@@ -71,29 +101,35 @@ export default function NewCommunityTravelExperiences() {
   };
 
   return (
-    <section className="w-full bg-white px-4 sm:px-6 md:px-10 lg:px-[80px] py-16">
-      <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-        <h2 className="text-3xl sm:text-4xl md:text-[44px] tracking-widest text-[#0a0a0a] uppercase mb-10 font-[family-name:var(--font-vollkorn-sc),_serif] font-medium">
-          Community Travel Experiences
-        </h2>
+    <section className="w-full bg-white py-16 overflow-hidden">
+      <div className="w-full flex flex-col items-start px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div className="flex w-full items-center justify-between mb-8">
+          <h2 className="text-2xl sm:text-[28px] tracking-widest text-[#0a0a0a] uppercase font-[family-name:var(--font-vollkorn-sc),_serif] font-medium">
+            Community Travel Experiences
+          </h2>
+          <button className="bg-black hover:bg-gray-900 text-white px-6 py-2.5 rounded-full text-[14px] font-bold transition-all duration-300 flex items-center gap-2">
+            View all
+            <ArrowRight className="w-[16px] h-[16px]" />
+          </button>
+        </div>
 
-        <div className="flex items-center justify-center gap-4 md:gap-8 mb-16 max-w-[1200px] w-full">
+        <div className="flex items-center justify-start gap-4 mb-12 max-w-[1200px] w-full">
           <button
             onClick={handlePrev}
-            className="hidden sm:flex flex-shrink-0 w-[54px] h-[54px] bg-black text-white rounded-full items-center justify-center hover:bg-gray-900 transition-colors shadow-lg"
+            className="hidden sm:flex flex-shrink-0 w-[44px] h-[44px] bg-black text-white rounded-full items-center justify-center hover:bg-gray-900 transition-colors shadow-lg"
           >
-            <ArrowLeft className="w-6 h-6" />
+            <ArrowLeft className="w-5 h-5" />
           </button>
 
-          <div className="flex flex-wrap justify-center overflow-x-auto gap-4 scrollbar-hide">
+          <div className="flex flex-wrap justify-start overflow-x-auto gap-4 scrollbar-hide">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`flex items-center gap-2 px-8 py-[10px] rounded-full text-[15px] font-[600] transition-colors ${
+                className={`flex items-center gap-2 px-5 py-[6px] rounded-full text-[13.5px] font-[600] transition-colors border ${
                   activeTab === tab
                     ? "bg-[#0aa699] text-white border-transparent"
-                    : "bg-white text-gray-500 border border-gray-400 hover:bg-gray-50 hover:text-gray-800"
+                    : "bg-white text-gray-500 border-gray-300 hover:bg-gray-50 hover:text-gray-800"
                 }`}
               >
                 {activeTab === tab && (
@@ -118,19 +154,21 @@ export default function NewCommunityTravelExperiences() {
 
           <button
             onClick={handleNext}
-            className="hidden sm:flex flex-shrink-0 w-[54px] h-[54px] bg-black text-white rounded-full items-center justify-center hover:bg-gray-900 transition-colors shadow-lg"
+            className="hidden sm:flex flex-shrink-0 w-[44px] h-[44px] bg-black text-white rounded-full items-center justify-center hover:bg-gray-900 transition-colors shadow-lg"
           >
-            <ArrowRight className="w-6 h-6" />
+            <ArrowRight className="w-5 h-5" />
           </button>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-[1240px]">
+      <div className="w-full overflow-x-auto pb-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div className="flex gap-6 pl-4 sm:pl-6 md:pl-8 lg:pl-12 xl:pl-16 pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-16 xl:max-w-none">
           {trips.map((trip, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-3xl overflow-hidden flex flex-col shadow-[0_12px_50px_-15px_rgba(0,0,0,0.12)] group transition-transform duration-300 hover:-translate-y-2"
+              className="bg-white rounded-[24px] overflow-hidden flex flex-col shadow-lg group transition-transform duration-300 hover:-translate-y-2 w-[300px] sm:w-[340px] md:w-[380px] flex-shrink-0"
             >
-              <div className="relative w-full aspect-[5/4] rounded-t-3xl overflow-hidden">
+              <div className="relative w-full aspect-[5/4] rounded-t-[24px] overflow-hidden">
                 <Image
                   src={trip.image}
                   alt={trip.title}
@@ -139,43 +177,43 @@ export default function NewCommunityTravelExperiences() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent" />
 
-                <div className="absolute top-[18px] left-[18px] right-[18px] flex justify-between items-start z-10">
-                  <div className="flex items-center gap-[8px] bg-[#1f4b66]/80 backdrop-blur-md text-white pr-[14px] pl-[6px] py-[6px] rounded-full text-[14.5px] font-medium">
-                    <div className="bg-[#0aa699] w-[24px] h-[24px] rounded-full flex items-center justify-center shadow-sm">
-                      <Star className="w-[12px] h-[12px] fill-white text-white" />
+                <div className="absolute top-[14px] left-[14px] right-[14px] flex justify-between items-start z-10">
+                  <div className="flex items-center gap-[6px] bg-[#1f4b66]/80 backdrop-blur-md text-white pr-[12px] pl-[5px] py-[5px] rounded-full text-[13px] font-medium">
+                    <div className="bg-[#0aa699] w-[20px] h-[20px] rounded-full flex items-center justify-center shadow-sm">
+                      <Star className="w-[10px] h-[10px] fill-white text-white" />
                     </div>
                     {trip.duration}
                   </div>
-                  <div className="flex items-center gap-[6px] bg-white/30 backdrop-blur-md text-white px-[14px] py-[8px] rounded-full text-[14.5px] font-medium border border-white/10">
-                    <MapPin className="w-[15px] h-[15px] fill-white text-white" />
+                  <div className="flex items-center gap-[6px] bg-white/30 backdrop-blur-md text-white px-[12px] py-[6px] rounded-full text-[13px] font-medium border border-white/10">
+                    <MapPin className="w-[13px] h-[13px] fill-white text-white" />
                     {trip.location}
                   </div>
                 </div>
 
                 <div className="absolute inset-0 flex items-center justify-center z-10 pb-8">
-                  <div className="w-[84px] h-[84px] bg-white/30 rounded-full flex items-center justify-center backdrop-blur-[2px] group-hover:scale-110 transition-transform duration-300 shadow-[0_4px_30px_rgba(0,0,0,0.1)] border border-white/20">
-                    <button className="w-[54px] h-[54px] bg-white rounded-full flex items-center justify-center shadow-md">
-                      <Play className="w-[22px] h-[22px] text-[#0aa699] ml-1 fill-current" />
+                  <div className="w-[72px] h-[72px] bg-white/30 rounded-full flex items-center justify-center backdrop-blur-[2px] group-hover:scale-110 transition-transform duration-300 shadow-[0_4px_30px_rgba(0,0,0,0.1)] border border-white/20">
+                    <button className="w-[48px] h-[48px] bg-white rounded-full flex items-center justify-center shadow-md">
+                      <Play className="w-[18px] h-[18px] text-[#0aa699] ml-1 fill-current" />
                     </button>
                   </div>
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 bg-black text-white py-[12px] px-6 text-[15px] font-medium z-10">
+                <div className="absolute bottom-0 left-0 right-0 bg-black text-white py-[10px] px-5 text-[13.5px] font-medium z-10">
                   <div className="flex justify-between items-center w-full">
-                    <div className="flex items-center gap-[8px]">
-                      <span className="text-[16px] leading-none mb-0.5 opacity-90">
+                    <div className="flex items-center gap-[6px]">
+                      <span className="text-[14px] leading-none mb-[1px] opacity-90">
                         📅
                       </span>
                       {trip.dates[0]}
                     </div>
 
                     <svg
-                      width="24"
-                      height="24"
+                      width="20"
+                      height="20"
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-[20px] h-[20px] text-white"
+                      className="w-[16px] h-[16px] text-white"
                     >
                       <path
                         d="M12 0L13.7 8.3L22 10L13.7 11.7L12 20L10.3 11.7L2 10L10.3 8.3L12 0Z"
@@ -183,20 +221,20 @@ export default function NewCommunityTravelExperiences() {
                       />
                     </svg>
 
-                    <div className="flex items-center gap-[8px]">
-                      <span className="text-[16px] leading-none mb-0.5 opacity-90">
+                    <div className="flex items-center gap-[6px]">
+                      <span className="text-[14px] leading-none mb-[1px] opacity-90">
                         📅
                       </span>
                       {trip.dates[1]}
                     </div>
 
                     <svg
-                      width="24"
-                      height="24"
+                      width="20"
+                      height="20"
                       viewBox="0 0 24 24"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="w-[20px] h-[20px] text-white"
+                      className="w-[16px] h-[16px] text-white"
                     >
                       <path
                         d="M12 0L13.7 8.3L22 10L13.7 11.7L12 20L10.3 11.7L2 10L10.3 8.3L12 0Z"
@@ -204,8 +242,8 @@ export default function NewCommunityTravelExperiences() {
                       />
                     </svg>
 
-                    <div className="flex items-center gap-[8px]">
-                      <span className="text-[16px] leading-none mb-0.5 opacity-90">
+                    <div className="flex items-center gap-[6px]">
+                      <span className="text-[14px] leading-none mb-[1px] opacity-90">
                         📅
                       </span>
                       {trip.dates[2]}
@@ -214,40 +252,33 @@ export default function NewCommunityTravelExperiences() {
                 </div>
               </div>
 
-              <div className="p-6 md:p-7 text-left flex flex-col flex-grow bg-white z-20">
-                <h3 className="text-[22px] font-[800] text-[#0a0a0a] mb-[10px] leading-tight tracking-tight">
+              <div className="p-5 md:p-6 text-left flex flex-col flex-grow bg-white z-20">
+                <h3 className="text-[19px] font-[800] text-[#0a0a0a] mb-[8px] leading-tight tracking-tight">
                   {trip.title}
                 </h3>
-                <p className="text-gray-500 text-[15.5px] leading-[1.6] mb-6 font-medium pr-2">
+                <p className="text-gray-500 text-[14px] leading-[1.6] mb-5 font-medium pr-2 line-clamp-2">
                   {trip.description}{" "}
-                  <button className="text-[#0aa699] font-[700] hover:underline">
+                  <button className="text-[#0aa699] font-[700] hover:underline whitespace-nowrap">
                     Readmore
                   </button>
                 </p>
 
                 <div className="mt-auto flex items-end justify-between pt-2">
                   <div className="flex flex-col">
-                    <span className="text-gray-500 text-[15px] font-medium mb-1">
+                    <span className="text-gray-500 text-[13px] font-medium mb-1">
                       Starts from
                     </span>
-                    <span className="text-[26px] font-[800] text-[#0a0a0a] leading-none tracking-tight">
+                    <span className="text-[22px] font-[800] text-[#0a0a0a] leading-none tracking-tight">
                       {trip.price}
                     </span>
                   </div>
-                  <button className="bg-[#0aa699] hover:bg-[#0aa699]/90 text-white px-7 py-3 rounded-[30px] text-[15px] font-[600] transition-colors shadow-[0_6px_15px_rgba(10,166,153,0.35)]">
+                  <button className="bg-[#0aa699] hover:bg-[#0aa699]/90 text-white px-5 py-2.5 rounded-[24px] text-[14px] font-[600] transition-colors shadow-[0_6px_15px_rgba(10,166,153,0.35)] cursor-pointer">
                     View More
                   </button>
                 </div>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-16">
-          <button className="bg-black hover:bg-gray-900 text-white px-8 py-3.5 rounded-full text-[15px] font-bold transition-all duration-300 hover:shadow-xl flex items-center gap-3">
-            View all
-            <ArrowRight className="w-[18px] h-[18px]" />
-          </button>
         </div>
       </div>
     </section>

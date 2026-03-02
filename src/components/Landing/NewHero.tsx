@@ -3,6 +3,7 @@ import React from "react";
 import { motion, useReducedMotion, type MotionProps } from "motion/react";
 import NextImage from "next/image";
 import { Marquee } from "@/components/ui/marquee";
+import { VolumeX } from "lucide-react";
 
 export default function NewHero() {
   const prefersReducedMotion = useReducedMotion();
@@ -26,16 +27,16 @@ export default function NewHero() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative w-full lg:min-h-[850px] md:min-h-[750px] sm:min-h-[650px] min-h-[550px] flex items-center justify-center overflow-hidden">
+      <div className="relative w-full h-[40vh] md:h-[50vh] lg:h-[55vh] min-h-[300px] max-h-[500px] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/landing/herobg.png')" }}
         />
         <div className="absolute inset-0 bg-black/40 z-10" />
 
-        <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 pt-4 pb-20 w-full h-full">
+        <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 pt-4 pb-12 w-full h-full">
           <motion.h1
-            className="text-white text-3xl sm:text-5xl md:text-6xl lg:text-[76px] mb-6 lg:mb-10 max-w-[1200px] leading-tight sm:leading-snug md:leading-snug lg:leading-tight uppercase"
+            className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 lg:mb-6 max-w-[1000px] leading-tight sm:leading-snug md:leading-snug lg:leading-tight uppercase"
             style={{
               fontFamily: "var(--font-vollkorn-sc), serif",
               textShadow:
@@ -48,7 +49,7 @@ export default function NewHero() {
           </motion.h1>
 
           <motion.div
-            className="flex items-center text-sm md:text-base text-white font-medium mt-0 bg-transparent px-4 py-1"
+            className="flex items-center text-xs md:text-sm text-white font-medium mt-0 bg-transparent px-4 py-1"
             {...infoAnimation}
           >
             <span>🌍 23 people exploring Europe this week</span>
@@ -57,15 +58,15 @@ export default function NewHero() {
       </div>
 
       {/* Mobile: marquee strip - Black Banner */}
-      <div className="w-full bg-black py-4 border-t border-white/10 md:hidden">
+      <div className="w-full bg-black py-2.5 border-t border-white/10 md:hidden">
         <Marquee
           className="[--gap:1.5rem] [--duration:30s]"
           pauseOnHover={false}
           repeat={4}
         >
-          <div className="flex items-center gap-6 text-white whitespace-nowrap">
-            <div className="flex items-center gap-2">
-              <div className="bg-white p-[3px] rounded-full flex items-center justify-center w-5 h-5">
+          <div className="flex items-center gap-5 text-white whitespace-nowrap">
+            <div className="flex items-center gap-1.5">
+              <div className="bg-white p-[2px] rounded-full flex items-center justify-center w-4 h-4">
                 <NextImage
                   src="/landing/google.svg"
                   alt="google"
@@ -74,29 +75,29 @@ export default function NewHero() {
                   className="w-full h-full"
                 />
               </div>
-              <span className="font-semibold text-sm">4.9 ⭐ Rating</span>
+              <span className="font-medium text-[13px]">4.9 ⭐ Rating</span>
             </div>
-            <span className="text-white/40 text-[10px]">✦</span>
-            <div className="flex items-center gap-2">
+            <span className="text-white/40 text-[9px]">✦</span>
+            <div className="flex items-center gap-1.5">
               <NextImage
                 src="/landing/instagram.svg"
                 alt="instagram"
                 width={100}
                 height={100}
-                className="w-5 h-5"
+                className="w-4 h-4"
               />
-              <span className="font-semibold text-sm">240K+ Community</span>
+              <span className="font-medium text-[13px]">240K+ Community</span>
             </div>
-            <span className="text-white/40 text-[10px]">✦</span>
-            <div className="flex items-center gap-2">
+            <span className="text-white/40 text-[9px]">✦</span>
+            <div className="flex items-center gap-1.5">
               <NextImage
                 src="/landing/happy.svg"
                 alt="happy"
                 width={32}
                 height={32}
-                className="w-5 h-5"
+                className="w-4 h-4"
               />
-              <span className="font-semibold text-sm">
+              <span className="font-medium text-[13px]">
                 800K+ Happy Travelers
               </span>
             </div>
@@ -105,11 +106,11 @@ export default function NewHero() {
       </div>
 
       {/* Desktop and tablets: static strip - Black Banner */}
-      <div className="w-full bg-[#0a0a0a] py-5 hidden md:block">
+      <div className="w-full bg-[#0a0a0a] py-3 hidden md:block">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap items-center justify-center gap-10 lg:gap-16 text-white">
-            <div className="flex items-center gap-3">
-              <div className="bg-white p-1 rounded-full flex items-center justify-center w-7 h-7">
+          <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-14 text-white">
+            <div className="flex items-center gap-2.5">
+              <div className="bg-white p-1 rounded-full flex items-center justify-center w-5 h-5">
                 <NextImage
                   src="/landing/google.svg"
                   alt="google"
@@ -118,37 +119,37 @@ export default function NewHero() {
                   className="w-full h-full"
                 />
               </div>
-              <span className="font-semibold text-[17px] tracking-wide">
+              <span className="font-medium text-[15px] tracking-wide">
                 4.9 ⭐ Rating
               </span>
             </div>
 
-            <span className="text-white/30 text-xs">✦</span>
+            <span className="text-white/30 text-[10px]">✦</span>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2.5">
               <NextImage
                 src="/landing/instagram.svg"
                 alt="instagram"
                 width={100}
                 height={100}
-                className="w-7 h-7"
+                className="w-5 h-5"
               />
-              <span className="font-semibold text-[17px] tracking-wide">
+              <span className="font-medium text-[15px] tracking-wide">
                 240K+ Community
               </span>
             </div>
 
-            <span className="text-white/30 text-xs">✦</span>
+            <span className="text-white/30 text-[10px]">✦</span>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2.5">
               <NextImage
                 src="/landing/happy.svg"
                 alt="happy"
                 width={32}
                 height={32}
-                className="w-7 h-7"
+                className="w-5 h-5"
               />
-              <span className="font-semibold text-[17px] tracking-wide">
+              <span className="font-medium text-[15px] tracking-wide">
                 800K+ Happy Travelers
               </span>
             </div>

@@ -300,7 +300,7 @@ export default function NewNavbar() {
     <>
       {/* Top Banner */}
       <div className="bg-[#0aa699] w-full py-[10px] flex items-center justify-center text-white text-[13px] sm:text-[14px] font-medium z-50">
-        Ladhak Spiti Early Bird - Save up to ₹3,000 🎉
+        Ladakh Spiti Early Bird – Save up to ₹3,000 🏂
       </div>
 
       {/* Main White Navbar */}
@@ -458,7 +458,10 @@ export default function NewNavbar() {
               strokeWidth={2.5}
             />
           </div>
-          <Link href="/all-upcoming-trips" className="flex items-center gap-[6px] cursor-pointer hover:text-[#0aa699] transition-colors whitespace-nowrap">
+          <Link
+            href="/all-upcoming-trips"
+            className="flex items-center gap-[6px] cursor-pointer hover:text-[#0aa699] transition-colors whitespace-nowrap"
+          >
             <span className="text-base leading-none">👥</span> Upcoming Group
             Trips{" "}
             <ChevronDown

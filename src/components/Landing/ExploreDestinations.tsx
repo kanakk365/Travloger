@@ -10,124 +10,164 @@ type Destination = {
 
 const destinations: Destination[] = [
   {
-    name: "Philippines",
-    image:
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=600&q=80",
-  },
-  {
-    name: "Japan",
-    image:
-      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80",
-  },
-  {
     name: "Vietnam",
     image:
-      "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=400&q=80",
   },
   {
-    name: "Kashmir",
+    name: "Tawang",
     image:
-      "https://images.unsplash.com/photo-1566838318109-a8bffb91d082?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    name: "Bali",
+    image:
+      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Manali",
     image:
-      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    name: "Thailand",
+    image:
+      "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    name: "Himachal Pradesh",
+    image:
+      "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    name: "Dubai",
+    image:
+      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    name: "Kerala",
+    image:
+      "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Georgia",
     image:
-      "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=400&q=80",
   },
   {
-    name: "Philippines",
+    name: "Uttarakhand",
     image:
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1566838318109-a8bffb91d082?auto=format&fit=crop&w=400&q=80",
   },
   {
-    name: "Japan",
+    name: "Almaty",
     image:
-      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400&q=80",
   },
   {
-    name: "Vietnam",
+    name: "Rajasthan",
     image:
-      "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    name: "Sri Lanka",
+    image:
+      "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Kashmir",
     image:
-      "https://images.unsplash.com/photo-1566838318109-a8bffb91d082?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1566838318109-a8bffb91d082?auto=format&fit=crop&w=400&q=80",
   },
   {
-    name: "Manali",
+    name: "Northern Lights",
     image:
-      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=400&q=80",
   },
   {
-    name: "Georgia",
+    name: "Andaman",
     image:
-      "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=600&q=80",
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400&q=80",
   },
+  {
+    name: "Egypt",
+    image:
+      "https://images.unsplash.com/photo-1566838318109-a8bffb91d082?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    name: "Cambodia",
+    image:
+      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    name: "Europe",
+    image:
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    name: "Nepal",
+    image:
+      "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=400&q=80",
+  },
+  {
+    name: "Bhutan",
+    image:
+      "https://images.unsplash.com/photo-1566838318109-a8bffb91d082?auto=format&fit=crop&w=400&q=80",
+  },
+];
+
+const tabs = [
+  { name: "All", icon: "🌍" },
+  { name: "International", icon: "✈️" },
+  { name: "Domestic", icon: "🇮🇳" },
+  { name: "Weekend", icon: "🚗" },
 ];
 
 export default function ExploreDestinations() {
   const [activeTab, setActiveTab] = useState("All");
 
   return (
-    <section className="w-full bg-white px-4 sm:px-6 md:px-10 lg:px-[80px] py-16">
-      <div className="max-w-[1400px] mx-auto flex flex-col items-start text-left">
-        <h2 className="text-3xl sm:text-4xl md:text-[44px] tracking-widest text-[#0a0a0a] uppercase mb-8 font-[family-name:var(--font-vollkorn-sc),_serif] font-medium">
+    <section className="w-full bg-white py-12 md:py-16 overflow-hidden">
+      <div className="w-full flex flex-col items-start px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <h2 className="text-2xl sm:text-[28px] tracking-widest text-[#0a0a0a] uppercase mb-6 font-[family-name:var(--font-vollkorn-sc),_serif] font-medium">
           Explore Destinations
         </h2>
 
-        <div className="flex flex-wrap gap-4 mt-2 mb-12">
-          {["All", "International", "Domestic", "Weekend"].map((tab) => (
+        <div className="flex gap-4 mb-10 overflow-x-auto w-full pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pr-4">
+          {tabs.map((tab) => (
             <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`flex items-center gap-2 px-8 py-[10px] rounded-full text-[15px] font-[600] transition-colors ${
-                activeTab === tab
-                  ? "bg-[#0aa699] text-white border-transparent"
-                  : "bg-transparent text-gray-500 border border-gray-400 hover:bg-gray-50 hover:text-gray-800"
+              key={tab.name}
+              onClick={() => setActiveTab(tab.name)}
+              className={`flex items-center gap-2 px-4 py-1.5 rounded-full text-[13px] font-medium transition-colors border whitespace-nowrap cursor-pointer ${
+                activeTab === tab.name
+                  ? "border-[#0aa699] bg-[#e6f6f5] text-gray-800"
+                  : "border-gray-200 bg-white text-gray-800 hover:bg-gray-50 hover:border-gray-300"
               }`}
             >
-              {activeTab === tab && (
-                <svg
-                  width="26"
-                  height="32"
-                  viewBox="0 0 26 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-[18px] w-auto"
-                >
-                  <path
-                    d="M25.4203 15.8047C21.9406 15.0145 18.8062 13.0488 16.575 10.2664C14.3437 7.48398 13.1285 3.98438 13.1285 0.418359V0H12.8629V0.418359C12.8629 3.98438 11.6344 7.48398 9.40977 10.2664C7.18516 13.0488 4.04414 15.0211 0.564453 15.8047L0 15.9375L0.564453 16.0637C4.04414 16.8539 7.18516 18.8195 9.40977 21.6086C11.6344 24.3977 12.8629 27.8906 12.8629 31.4566V31.875H13.1285V31.4566C13.1285 27.8906 14.357 24.391 16.5816 21.6086C18.8062 18.8195 21.9473 16.8539 25.427 16.0637L25.998 15.9309L25.4203 15.8047Z"
-                    fill="white"
-                  />
-                </svg>
-              )}
-              {tab}
+              <span className="text-[15px]">{tab.icon}</span>
+              {tab.name}
             </button>
           ))}
         </div>
+      </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-[24px] gap-y-[40px] w-full">
+      <div className="w-full overflow-x-auto pb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div className="grid grid-rows-2 grid-flow-col gap-x-6 gap-y-12 auto-cols-max pl-4 sm:pl-6 md:pl-8 lg:pl-12 xl:pl-16 pr-4 sm:pr-6 md:pr-8 lg:pr-12 xl:pr-16 xl:max-w-none">
           {destinations.map((dest, i) => (
             <div
               key={i}
-              className="flex flex-col items-center gap-4 cursor-pointer group"
+              className="flex flex-col items-center gap-3 cursor-pointer group w-[110px] sm:w-[130px] md:w-[150px]"
             >
-              <div className="w-full aspect-[4/5] relative rounded-[28px] overflow-hidden shadow-sm">
+              <div className="relative w-full aspect-[4/5] rounded-4xl overflow-hidden border border-gray-100 bg-gray-50 flex-shrink-0">
                 <Image
                   src={dest.image}
                   alt={dest.name}
                   fill
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 16vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 110px, (max-width: 1024px) 130px, 150px"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <span className="font-semibold text-gray-800 text-[14px] md:text-[15px]">
+              <span className="font-regular text-gray-800 text-[13px] sm:text-[14px] text-center leading-tight">
                 {dest.name}
               </span>
             </div>
