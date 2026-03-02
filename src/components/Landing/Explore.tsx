@@ -27,8 +27,8 @@ export const destinations = [
 
 export default function Explore() {
   return (
-    <section className="w-full bg-white px-4 sm:px-6 md:px-10 lg:px-[80px] py-16">
-      <div className="max-w-[1400px] mx-auto relative flex flex-col items-center">
+    <section className="w-full bg-white py-16 overflow-hidden">
+      <div className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         {/* Background Image Banner */}
         <div className="w-full relative h-[260px] md:h-[360px] lg:h-[400px] rounded-[32px] overflow-hidden">
           <Image
@@ -46,7 +46,7 @@ export default function Explore() {
         </div>
 
         {/* Cards Wrapper */}
-        <div className="w-full max-w-[1240px] relative mt-[-100px] md:mt-[-160px] lg:mt-[-180px] z-10 pb-8">
+        <div className="w-full max-w-[1000px] xl:max-w-[1100px] relative mt-[-100px] md:mt-[-160px] lg:mt-[-180px] z-10 pb-8 mx-auto">
           {/* Arrows */}
           <button className="hidden md:flex absolute -left-5 lg:-left-6 top-1/2 -translate-y-1/2 z-20 h-[48px] w-[48px] items-center justify-center rounded-full bg-black text-white shadow-[0_4px_14px_rgba(0,0,0,0.5)] hover:bg-gray-900 transition-colors">
             <ArrowLeft className="h-5 w-5" />
@@ -75,15 +75,15 @@ export default function Explore() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
                   {/* Text Content */}
-                  <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 flex flex-col">
-                    <h3 className="text-white text-[28px] md:text-[32px] font-[800] tracking-wide mb-2 uppercase">
+                  <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 flex flex-col">
+                    <h3 className="text-white text-[24px] md:text-[28px] font-[800] tracking-wide mb-1.5 uppercase leading-tight">
                       {destination.name}
                     </h3>
                     <div className="flex items-center gap-[10px]">
-                      <span className="text-white/70 text-[14px] line-through decoration-white/70 font-medium tracking-wide">
+                      <span className="text-white/70 text-[13px] line-through decoration-white/70 font-medium tracking-wide">
                         {destination.oldPrice}
                       </span>
-                      <span className="text-white text-[15.5px] font-[700] tracking-wide">
+                      <span className="text-white text-[14px] font-[700] tracking-wide">
                         {destination.price}
                       </span>
                     </div>
