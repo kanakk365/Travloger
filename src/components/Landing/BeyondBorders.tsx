@@ -1,10 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const destinations = [
   {
@@ -28,251 +26,71 @@ const destinations = [
 ];
 
 export default function BeyondBorders() {
-  const router = useRouter();
-  const [cardOrder, setCardOrder] = useState<number[]>(() =>
-    destinations.map((_, index) => index),
-  );
-  const [dragOffset, setDragOffset] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const touchStartY = useRef<number | null>(null);
-  const touchStartX = useRef<number | null>(null);
-  const isSwiping = useRef(false);
-  const animationTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    return () => {
-      if (animationTimeout.current) {
-        clearTimeout(animationTimeout.current);
-      }
-    };
-  }, []);
-
-  const handleCardChange = (direction: "next" | "prev") => {
-    setCardOrder((prev) => {
-      if (direction === "next") {
-        const [first, ...rest] = prev;
-        return [...rest, first];
-      }
-      const last = prev[prev.length - 1];
-      const rest = prev.slice(0, prev.length - 1);
-      return [last, ...rest];
-    });
-  };
-
-  const onTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
-    if (isAnimating) return;
-    const touch = event.touches[0];
-    touchStartY.current = touch.clientY;
-    touchStartX.current = touch.clientX;
-    isSwiping.current = false;
-    setIsDragging(false);
-  };
-
-  const onTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
-    if (isAnimating) return;
-    if (touchStartY.current === null || touchStartX.current === null) return;
-    const touch = event.touches[0];
-    const deltaY = touch.clientY - touchStartY.current;
-    const deltaX = touch.clientX - touchStartX.current;
-
-    if (!isSwiping.current) {
-      const horizontal =
-        Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10;
-      const vertical = Math.abs(deltaY) > 10;
-
-      if (horizontal) {
-        isSwiping.current = true;
-        setIsDragging(true);
-      } else if (vertical) {
-        touchStartY.current = null;
-        touchStartX.current = null;
-        isSwiping.current = false;
-        setIsDragging(false);
-        return;
-      }
-    }
-
-    if (isSwiping.current) {
-      event.preventDefault();
-      setDragOffset(deltaX);
-    }
-  };
-
-  const onTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
-    if (isAnimating) return;
-    const SWIPE_THRESHOLD = 80;
-    const SWIPE_OUT_DISTANCE = 320;
-
-    if (!isSwiping.current || touchStartY.current === null) {
-      touchStartY.current = null;
-      touchStartX.current = null;
-      setIsDragging(false);
-      setDragOffset(0);
-      return;
-    }
-
-    const touch = event.changedTouches[0];
-    const deltaX = touch.clientX - (touchStartX.current ?? touch.clientX);
-    const swipeMagnitude = Math.abs(deltaX);
-
-    // Allow swiping in either direction to show next card
-    if (swipeMagnitude > SWIPE_THRESHOLD) {
-      setIsAnimating(true);
-      setIsDragging(false);
-      setDragOffset(deltaX < 0 ? -SWIPE_OUT_DISTANCE : SWIPE_OUT_DISTANCE);
-
-      animationTimeout.current = setTimeout(() => {
-        handleCardChange("next");
-        setIsAnimating(false);
-        setDragOffset(0);
-      }, 220);
-    } else {
-      setIsDragging(false);
-      setDragOffset(0);
-    }
-
-    isSwiping.current = false;
-    touchStartY.current = null;
-    touchStartX.current = null;
-  };
-
-  const getCardStyle = (position: number) => {
-    const baseTransforms = [
-      "translate(0px, 0px) scale(1)",
-      "translate(20px, -16px) scale(0.95)",
-      "translate(40px, -32px) scale(0.9)",
-    ];
-
-    let transform = baseTransforms[position] ?? baseTransforms[2];
-    if (position === 0) {
-      transform = `translate(${dragOffset}px, 0px) scale(1)`;
-    }
-
-    return {
-      transform,
-      transition:
-        position === 0 && isDragging
-          ? "none"
-          : "transform 0.3s ease, opacity 0.3s ease",
-      zIndex: position === 0 ? 30 : position === 1 ? 20 : 10,
-      opacity: position === 2 ? 0.85 : 1,
-    };
-  };
-
   return (
-    <section className="relative overflow-hidden pb-20 pt-24 mt-16 sm:pb-32 sm:pt-48 font-manrope bg-white">
-      <div className="max-w-7xl mx-auto sm:px-10">
-        <div className="relative isolate">
-          <div className="pointer-events-none absolute -inset-x-8 sm:-inset-x-18 lg:-inset-x-24 -top-28 h-[25rem] sm:h-[25rem] sm:rounded-3xl ">
-            <Image
-              src="/landing/paris.png"
-              alt="Taj Mahal silhouette"
-              fill
-              priority
-              className="object-cover object-center rounded-3xl"
-            />
-          </div>
-
-          <div className="relative z-10 w-full flex flex-col items-center">
-            <h2 className="text-center  text-3xl sm:text-4xl md:text-5xl font-semibold tracking- text-white drop-shadow-[0_0.75rem_2.8125rem_rgba(0,0,0,0.4)]">
+    <section className="w-full bg-white py-16 overflow-hidden">
+      <div className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        {/* Background Image Banner */}
+        <div className="w-full relative h-[260px] md:h-[360px] lg:h-[400px] rounded-[32px] overflow-hidden">
+          <Image
+            src="/landing/paris.png"
+            alt="Beyond Borders"
+            fill
+            className="object-cover object-center"
+          />
+          {/* Title inside the banner */}
+          <div className="absolute top-[35%] md:top-[30%] lg:top-[32%] w-full flex justify-center px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-[44px] tracking-widest text-white uppercase font-[family-name:var(--font-vollkorn-sc),_serif] font-medium text-center drop-shadow-[0_0.75rem_2.8125rem_rgba(0,0,0,0.4)]">
               Go Beyond Borders
             </h2>
+          </div>
+        </div>
 
-            <div className="relative mt-12 sm:mt-16 w-full">
-              <div className="relative z-10 w-full">
-                <button className=" z-10 pointer-events-auto hidden md:flex h-12 w-12 items-center justify-center rounded-full bg-black text-white shadow-[0_1.5rem_2.8125rem_rgba(15,23,42,0.35)] absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2">
-                  <ArrowLeft className="h-5 w-5" />
-                </button>
+        {/* Cards Wrapper */}
+        <div className="w-full max-w-[1000px] xl:max-w-[1100px] relative mt-[-100px] md:mt-[-160px] lg:mt-[-180px] z-10 pb-8 mx-auto">
+          {/* Arrows */}
+          <button className="hidden md:flex absolute -left-5 lg:-left-6 top-1/2 -translate-y-1/2 z-20 h-[48px] w-[48px] items-center justify-center rounded-full bg-black text-white shadow-[0_4px_14px_rgba(0,0,0,0.5)] hover:bg-gray-900 transition-colors">
+            <ArrowLeft className="h-5 w-5" />
+          </button>
 
-                <div className="px-8">
-                  <div className="hidden sm:grid w-full max-w-[1000px] xl:max-w-[1100px] mx-auto grid-cols-1 gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
-                    {destinations.map((destination) => (
-                      <Link
-                        href="/details"
-                        key={destination.name}
-                        className="w-full group"
-                      >
-                        <div className="relative w-full aspect-[4/5] overflow-hidden rounded-[24px] shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-transform duration-300 cursor-pointer">
-                          <Image
-                            src={destination.image}
-                            alt={destination.name}
-                            fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+          <button className="hidden md:flex absolute -right-5 lg:-right-6 top-1/2 -translate-y-1/2 z-20 h-[48px] w-[48px] items-center justify-center rounded-full bg-black text-white shadow-[0_4px_14px_rgba(0,0,0,0.5)] hover:bg-gray-900 transition-colors">
+            <ArrowRight className="h-5 w-5" />
+          </button>
 
-                          <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 flex flex-col items-center">
-                            <h3 className="text-white text-[24px] md:text-[28px] font-[800] tracking-[0.32em] uppercase text-center mb-1.5 leading-tight">
-                              {destination.name}
-                            </h3>
-                            <div className="flex items-center justify-center gap-[10px]">
-                              <span className="text-white/70 text-[13px] line-through font-medium tracking-wide">
-                                {destination.oldPrice}
-                              </span>
-                              <span className="text-[#FBB429] text-[14px] font-[700] tracking-wide">
-                                {destination.price}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 px-4 md:px-0">
+            {destinations.map((destination) => (
+              <Link
+                href="/details"
+                key={destination.name}
+                className="w-full group"
+              >
+                <div className="relative w-full aspect-[4/5] rounded-[24px] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-transform duration-300">
+                  <Image
+                    src={destination.image}
+                    alt={destination.name}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
 
-                  <div
-                    className="sm:hidden relative h-[30rem] w-full max-w-[20rem] mx-auto flex items-center justify-center"
-                    onTouchStart={onTouchStart}
-                    onTouchMove={onTouchMove}
-                    onTouchEnd={onTouchEnd}
-                  >
-                    {cardOrder.map((index, position) => {
-                      if (position > 2) return null;
-                      const destination = destinations[index];
-                      return (
-                        <div
-                          key={`${destination.name}-${position}`}
-                          className="absolute h-[26rem] w-[19rem] rounded-3xl overflow-hidden shadow-[0px_18px_32px_rgba(0,0,0,0.35)]"
-                          style={getCardStyle(position)}
-                          onClick={() => router.push("/details")}
-                        >
-                          <Image
-                            src={destination.image}
-                            alt={destination.name}
-                            fill
-                            sizes="(max-width: 768px) 100vw"
-                            className="object-cover"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/25 to-black/85" />
-                          <div className="absolute inset-0 flex flex-col">
-                            <div className="flex flex-1 items-center justify-center px-8 text-center text-white">
-                              <h3 className="text-2xl font-extrabold tracking-[0.28em] uppercase">
-                                {destination.name}
-                              </h3>
-                            </div>
-                            <div className="px-8 pb-8">
-                              <div className="flex items-baseline gap-3">
-                                <p className="text-sm text-white/70 line-through">
-                                  {destination.oldPrice}
-                                </p>
-                                <p className="text-lg font-semibold text-[#FBB429]">
-                                  {destination.price}
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
+                  {/* Text Content */}
+                  <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 flex flex-col items-center">
+                    <h3 className="text-white text-[24px] md:text-[28px] font-[800] tracking-[0.32em] uppercase mb-1.5 leading-tight text-center">
+                      {destination.name}
+                    </h3>
+                    <div className="flex items-center justify-center gap-[10px]">
+                      <span className="text-white/70 text-[13px] line-through decoration-white/70 font-medium tracking-wide">
+                        {destination.oldPrice}
+                      </span>
+                      <span className="text-[#FBB429] text-[14px] font-[700] tracking-wide">
+                        {destination.price}
+                      </span>
+                    </div>
                   </div>
                 </div>
-
-                <button className="pointer-events-auto hidden md:flex h-12 w-12 items-center justify-center rounded-full bg-black text-white shadow-[0_1.5rem_2.8125rem_rgba(15,23,42,0.35)] absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2">
-                  <ArrowRight className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

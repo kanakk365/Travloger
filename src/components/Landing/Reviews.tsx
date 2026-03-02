@@ -65,10 +65,10 @@ interface ReviewCardProps {
 
 const ReviewCard = ({ name, role, text, avatar }: ReviewCardProps) => {
   return (
-    <div className="flex flex-col p-6 sm:p-7 md:p-8 bg-white rounded-3xl shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-gray-100/50 w-[300px] sm:w-[360px] md:w-[420px] shrink-0 mx-2">
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-3 md:gap-4">
-          <div className="w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden bg-gray-100 flex-shrink-0">
+    <div className="flex flex-col p-5 sm:p-6 md:p-6 bg-white rounded-[24px] shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-gray-100/50 w-[260px] sm:w-[320px] md:w-[360px] shrink-0 mx-2">
+      <div className="flex items-center justify-between mb-3 md:mb-4">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 md:w-11 md:h-11 rounded-full overflow-hidden bg-gray-100 flex-shrink-0">
             <Image
               src={avatar}
               alt={name}
@@ -110,15 +110,15 @@ export default function Reviews() {
   const row2 = [...secondRow, ...secondRow, ...secondRow];
 
   return (
-    <section className="bg-white py-24 w-full overflow-hidden">
-      <div className="max-w-[1400px] mx-auto flex flex-col items-center">
-        <h2 className="text-3xl sm:text-4xl md:text-[44px] tracking-widest text-[#0a0a0a] uppercase mb-16 font-[family-name:var(--font-vollkorn-sc),_serif] font-medium text-center">
-          Reviews From Our Travellers
-        </h2>
+    <section className="bg-white py-16 w-full overflow-hidden">
+      <div className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div className="w-full max-w-[1000px] xl:max-w-[1100px] mx-auto flex flex-col items-center">
+          <h2 className="text-2xl sm:text-[28px] md:text-[32px] tracking-widest text-[#0a0a0a] uppercase mb-12 font-[family-name:var(--font-vollkorn-sc),_serif] font-medium text-center">
+            Reviews From Our Travellers
+          </h2>
+        </div>
 
         <div className="relative flex flex-col w-full items-center justify-center gap-6 px-4">
-
-
           {/* Row 1 - Left to Right */}
           <Marquee
             pauseOnHover

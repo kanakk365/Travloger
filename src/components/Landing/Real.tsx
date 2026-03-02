@@ -170,9 +170,9 @@ export default function Real() {
   };
 
   return (
-    <section className="bg-white py-24">
-      <div className="mx-auto flex w-full flex-col items-center gap-14 px-6 text-center">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl uppercase tracking-[0.1em] text-black font-[family-name:var(--font-vollkorn-sc),_serif] font-medium">
+    <section className="bg-white py-16">
+      <div className="mx-auto flex w-full flex-col items-center gap-10 px-6 text-center">
+        <h2 className="text-2xl sm:text-[28px] md:text-[32px] uppercase tracking-widest text-[#0a0a0a] font-[family-name:var(--font-vollkorn-sc),_serif] font-medium">
           Real Stories. Real Memories.
         </h2>
 
@@ -183,9 +183,9 @@ export default function Real() {
               <Link
                 href="/details"
                 key={`${story.name}-${index}`}
-                className="group relative flex-shrink-0 w-96 overflow-hidden rounded-[36px] "
+                className="group relative flex-shrink-0 w-64 sm:w-80 overflow-hidden rounded-[24px]"
               >
-                <div className="relative h-[30rem] w-full">
+                <div className="relative h-[20rem] sm:h-[24rem] w-full">
                   <Image
                     src={story.image}
                     alt={story.name}
@@ -210,7 +210,7 @@ export default function Real() {
 
         {/* Mobile: swipeable stacked cards */}
         <div
-          className="sm:hidden relative h-[30rem] w-full max-w-[20rem] mx-auto flex items-center justify-center"
+          className="sm:hidden relative h-[24rem] w-full max-w-[16rem] mx-auto flex items-center justify-center"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
@@ -221,7 +221,7 @@ export default function Real() {
             return (
               <div
                 key={`${story.name}-${position}`}
-                className="absolute h-[26rem] w-[19rem] rounded-[28px] overflow-hidden shadow-[0px_18px_32px_rgba(0,0,0,0.35)] group"
+                className="absolute h-[20rem] w-[15rem] rounded-[24px] overflow-hidden shadow-[0px_18px_32px_rgba(0,0,0,0.35)] group"
                 style={getCardStyle(position)}
                 onClick={() => router.push("/details")}
               >

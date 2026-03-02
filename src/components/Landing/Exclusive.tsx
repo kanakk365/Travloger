@@ -44,7 +44,7 @@ const tours = [
 
 export default function Exclusive() {
   return (
-    <section className="relative overflow-hidden py-24">
+    <section className="relative overflow-hidden py-16">
       <div className="absolute inset-0 -z-20">
         <div className="relative h-full w-full">
           <Image
@@ -60,7 +60,7 @@ export default function Exclusive() {
 
       <div className="relative z-10 mx-auto flex flex-col items-center gap-14 px-0 sm:px-6 text-center text-white">
         <div className="space-y-4 px-6">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl tracking-[0.1em] text-white uppercase font-[family-name:var(--font-vollkorn-sc),_serif] font-medium drop-shadow-sm">
+          <h2 className="text-2xl sm:text-[28px] md:text-[32px] tracking-widest text-white uppercase font-[family-name:var(--font-vollkorn-sc),_serif] font-medium drop-shadow-sm">
             Travloger&apos;s EXCLUSIVE Tours.
           </h2>
         </div>
@@ -73,9 +73,9 @@ export default function Exclusive() {
             <Link
               href="/details"
               key={`${tour.name}-${index}`}
-              className="group relative flex-shrink-0 overflow-hidden w-[20rem] sm:w-[28rem] rounded-[24px] sm:rounded-[32px] shadow-[0_20px_45px_rgba(0,0,0,0.35)]"
+              className="group relative flex-shrink-0 overflow-hidden w-[16rem] sm:w-[24rem] rounded-[24px] shadow-[0_20px_45px_rgba(0,0,0,0.35)]"
             >
-              <div className="relative h-[220px] sm:h-[280px] w-full overflow-hidden md:h-[340px]">
+              <div className="relative h-[180px] sm:h-[220px] w-full overflow-hidden md:h-[280px]">
                 <Image
                   src={tour.image}
                   alt={`${tour.name} scenic view`}
@@ -86,12 +86,12 @@ export default function Exclusive() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition duration-500 group-hover:from-black/95" />
 
-                <div className="absolute bottom-6 sm:bottom-8 left-6 sm:left-8 right-6 flex flex-col items-start gap-4">
-                  <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-wide">
+                <div className="absolute bottom-5 sm:bottom-6 left-5 sm:left-6 right-5 flex flex-col items-start gap-3">
+                  <h3 className="text-2xl sm:text-[28px] md:text-[32px] font-bold text-white tracking-wide">
                     {tour.name}
                   </h3>
 
-                  <div className="flex flex-wrap items-center gap-3 text-[13px] sm:text-[15px] font-medium">
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-[12px] sm:text-[14px] font-medium">
                     <span className="flex items-center gap-2 rounded-full bg-white/20 border border-white/5 pr-4 pl-1.5 py-1.5 text-white backdrop-blur-md">
                       <div className="bg-[#0aa699] w-6 sm:w-7 h-6 sm:h-7 rounded-full flex items-center justify-center">
                         <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-white text-white" />
