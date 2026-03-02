@@ -31,7 +31,7 @@ function TripCard({ trip }: { trip: (typeof upcomingTrips)[0] }) {
   return (
     <Link
       href="/details"
-      className="relative h-[14rem] w-[20rem] flex-shrink-0 overflow-hidden rounded-3xl sm:h-[18rem] sm:w-[28rem] md:h-[17rem] md:w-7xl"
+      className="relative h-[9rem] w-[80vw] sm:h-[12rem] sm:w-[70vw] md:h-[14rem] md:w-[60vw] lg:h-[16rem] lg:w-[800px] flex-shrink-0 overflow-hidden rounded-3xl"
     >
       <Image
         src={trip.image}
@@ -44,14 +44,10 @@ function TripCard({ trip }: { trip: (typeof upcomingTrips)[0] }) {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50"></div>
 
-      <div className="absolute inset-y-0 left-0 flex flex-col justify-end pb-6 gap-2 px-6 text-white sm:pb-10 sm:gap-3 sm:px-8 md:px-4">
-        <p className="text-sm text-white/85 sm:text-lg md:text-2xl">
-          {trip.destination}
-        </p>
-        <h3 className="text-base font-semibold sm:text-2xl md:text-3xl">
-          {trip.tagline}
-        </h3>
-        <p className="text-sm font-medium uppercase tracking-wider text-white/80 sm:text-lg">
+      <div className="absolute inset-y-0 left-0 flex flex-col justify-end pb-4 gap-1 px-5 text-white sm:pb-6 sm:gap-2 sm:px-6 md:px-8">
+        <p className="text-xs text-white/85 sm:text-sm">{trip.destination}</p>
+        <h3 className="text-sm font-semibold sm:text-lg">{trip.tagline}</h3>
+        <p className="text-xs font-medium uppercase tracking-wider text-white/80 sm:text-sm mt-1">
           Start From <span className="text-[#ffba08]">{trip.price}/-</span>
         </p>
       </div>
@@ -61,10 +57,12 @@ function TripCard({ trip }: { trip: (typeof upcomingTrips)[0] }) {
 
 function UpcomingTrip() {
   return (
-    <section className="max-w-7xl mx-auto w-full px-6">
-      <h2 className="text-3xl sm:text-4xl md:text-[44px] tracking-widest text-[#0a0a0a] uppercase mb-16 font-[family-name:var(--font-vollkorn-sc),_serif] font-medium text-center">
-        Best Upcoming Trips
-      </h2>
+    <section className="w-full bg-white py-16 overflow-hidden">
+      <div className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <h2 className="text-2xl sm:text-[28px] tracking-widest text-[#0a0a0a] uppercase font-[family-name:var(--font-vollkorn-sc),_serif] font-medium text-center">
+          Best Upcoming Trips
+        </h2>
+      </div>
 
       <div className="relative mt-10 w-full overflow-hidden">
         <div className="pointer-events-none hidden sm:block absolute inset-y-0 left-0 z-10 w-6 bg-gradient-to-r from-white to-transparent" />
