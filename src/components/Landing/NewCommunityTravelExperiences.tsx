@@ -166,7 +166,7 @@ export default function NewCommunityTravelExperiences() {
           {trips.map((trip, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-[24px] overflow-hidden flex flex-col shadow-lg group transition-transform duration-300 hover:-translate-y-2 w-[300px] sm:w-[340px] md:w-[380px] flex-shrink-0"
+              className="bg-white rounded-[24px] overflow-hidden flex flex-col shadow-lg group transition-transform duration-300 w-[300px] sm:w-[340px] md:w-[380px] flex-shrink-0"
             >
               <div className="relative w-full aspect-[5/4] rounded-t-[24px] overflow-hidden">
                 <Image
