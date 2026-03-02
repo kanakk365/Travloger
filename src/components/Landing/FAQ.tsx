@@ -53,33 +53,35 @@ export default function FAQ() {
   };
 
   return (
-    <section className="w-full px-4 sm:px-6 md:px-10 lg:px-20 py-32 md:py-40 lg:py-48 bg-[linear-gradient(92.48deg,#000000_-22.48%,#323232_79.48%)]">
-      <div className="max-w-7xl mx-auto flex flex-col items-center">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl tracking-[0.1em] text-white uppercase mb-16 font-[family-name:var(--font-vollkorn-sc),_serif] font-medium text-center drop-shadow-sm">
-          Frequently Ask Questions
-        </h2>
+    <section className="w-full py-16 bg-[linear-gradient(92.48deg,#000000_-22.48%,#323232_79.48%)] overflow-hidden">
+      <div className="w-full flex flex-col items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+        <div className="w-full max-w-[1000px] xl:max-w-[1100px] mx-auto flex flex-col items-center">
+          <h2 className="text-2xl sm:text-[28px] md:text-[32px] tracking-widest text-white uppercase mb-12 font-[family-name:var(--font-vollkorn-sc),_serif] font-medium text-center drop-shadow-sm">
+            Frequently Ask Questions
+          </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6 w-full items-start">
-          <div className="flex flex-col gap-6">
-            {leftFaqs.map((faq) => (
-              <FAQCard
-                key={faq.id}
-                faq={faq}
-                isOpen={openId === faq.id}
-                onClick={() => toggleFAQ(faq.id)}
-              />
-            ))}
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6 w-full items-start">
+            <div className="flex flex-col gap-6">
+              {leftFaqs.map((faq) => (
+                <FAQCard
+                  key={faq.id}
+                  faq={faq}
+                  isOpen={openId === faq.id}
+                  onClick={() => toggleFAQ(faq.id)}
+                />
+              ))}
+            </div>
 
-          <div className="flex flex-col gap-6">
-            {rightFaqs.map((faq) => (
-              <FAQCard
-                key={faq.id}
-                faq={faq}
-                isOpen={openId === faq.id}
-                onClick={() => toggleFAQ(faq.id)}
-              />
-            ))}
+            <div className="flex flex-col gap-6">
+              {rightFaqs.map((faq) => (
+                <FAQCard
+                  key={faq.id}
+                  faq={faq}
+                  isOpen={openId === faq.id}
+                  onClick={() => toggleFAQ(faq.id)}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -99,7 +101,7 @@ function FAQCard({
   return (
     <div
       onClick={onClick}
-      className={`cursor-pointer rounded-2xl md:rounded-2xl p-6 md:px-8 md:py-7 transition-all duration-300 ${
+      className={`cursor-pointer rounded-2xl md:rounded-2xl p-5 md:px-6 md:py-5 transition-all duration-300 ${
         isOpen
           ? "bg-white text-black shadow-xl"
           : "bg-[#444444] text-white hover:bg-[#4a4a4a]"
@@ -116,7 +118,7 @@ function FAQCard({
 
         <div className="flex flex-col">
           <h3
-            className={`text-lg md:text-xl font-medium leading-tight ${isOpen ? "text-[#111]" : "text-white/95"}`}
+            className={`text-base md:text-lg font-medium leading-tight ${isOpen ? "text-[#111]" : "text-white/95"}`}
           >
             {faq.question}
           </h3>
@@ -129,7 +131,7 @@ function FAQCard({
             }`}
           >
             <div className="overflow-hidden">
-              <p className="text-gray-500 text-base md:text-lg leading-relaxed font-normal pr-4 pb-2">
+              <p className="text-gray-500 text-sm md:text-base leading-relaxed font-normal pr-4 pb-2">
                 {faq.answer}
               </p>
             </div>
