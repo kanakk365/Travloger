@@ -66,7 +66,7 @@ export default function AllUpcomingTripsContent() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative w-full h-96 md:h-[500px] lg:h-[600px] flex items-center justify-center overflow-hidden">
+      <div className="relative w-full h-[40vh] md:h-[50vh] lg:h-[55vh] min-h-[300px] max-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/landing/ladakhMountain.png"
@@ -78,8 +78,16 @@ export default function AllUpcomingTripsContent() {
         </div>
         <div className="absolute inset-0 bg-black/30 z-10" />
 
-        <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 w-full h-full mt-8">
-          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-[64px] mb-6 max-w-5xl leading-tight uppercase font-[family-name:var(--font-vollkorn-sc),_serif] font-medium tracking-wide drop-shadow-md">
+        <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 pt-4 pb-12 w-full h-full">
+          <h1
+            className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 lg:mb-6 max-w-[1000px] leading-tight sm:leading-snug md:leading-snug lg:leading-tight uppercase"
+            style={{
+              fontFamily: "var(--font-vollkorn-sc), serif",
+              textShadow:
+                "0 4px 30px rgba(0,0,0,0.8), 2px 2px 8px rgba(0,0,0,0.6)",
+              fontWeight: 600,
+            }}
+          >
             Explore All Upcoming Trips
           </h1>
 
@@ -91,8 +99,8 @@ export default function AllUpcomingTripsContent() {
       </div>
 
       {/* Main Content Area */}
-      <div className="mx-auto container px-4 sm:px-6 lg:px-4 py-16">
-        <h2 className="text-4xl md:text-5xl tracking-widest text-[#0a0a0a] uppercase mb-10 font-[family-name:var(--font-vollkorn-sc),_serif] font-medium drop-shadow-sm">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-2xl sm:text-[28px] md:text-[32px] tracking-widest text-[#0a0a0a] uppercase mb-8 font-[family-name:var(--font-vollkorn-sc),_serif] font-medium drop-shadow-sm">
           All Upcoming Trips
         </h2>
 
@@ -332,10 +340,10 @@ export default function AllUpcomingTripsContent() {
             {trips.map((trip) => (
               <div
                 key={trip.id}
-                className="flex flex-col sm:flex-row bg-white rounded-[28px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 p-3 sm:p-4 group hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-300"
+                className="flex flex-col sm:flex-row bg-white rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 p-3 sm:p-4 group hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-300"
               >
                 {/* Image */}
-                <div className="w-full sm:w-80 lg:w-96 h-56 sm:h-auto md:h-64 relative rounded-3xl overflow-hidden shrink-0">
+                <div className="w-full sm:w-64 lg:w-72 h-48 sm:h-auto md:h-56 relative rounded-[20px] overflow-hidden shrink-0">
                   <Image
                     src={trip.image}
                     alt={trip.title}
@@ -346,9 +354,9 @@ export default function AllUpcomingTripsContent() {
                 </div>
 
                 {/* Content */}
-                <div className="flex-1 px-4 sm:px-8 py-4 sm:py-6 flex flex-col justify-center">
-                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-3">
-                    <h3 className="text-xl font-extrabold text-gray-900 leading-tight">
+                <div className="flex-1 px-4 sm:px-6 py-4 sm:py-5 flex flex-col justify-center">
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-3">
+                    <h3 className="text-lg sm:text-[20px] font-extrabold text-gray-900 leading-tight">
                       {trip.title}
                     </h3>
                     <div className="bg-gray-100/80 text-gray-700 text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5 font-bold whitespace-nowrap">
@@ -359,7 +367,7 @@ export default function AllUpcomingTripsContent() {
                     </div>
                   </div>
 
-                  <p className="text-gray-500 text-sm font-medium leading-relaxed mb-6 max-w-md">
+                  <p className="text-gray-500 text-sm font-medium leading-relaxed mb-5 max-w-md">
                     {trip.description}{" "}
                     <span className="text-[#0aa699] font-bold hover:underline cursor-pointer tracking-wide ml-1">
                       Readmore

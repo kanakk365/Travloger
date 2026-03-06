@@ -34,10 +34,10 @@ function Travel() {
   return (
     <section
       id="travel-stories"
-      className="bg-white py-8 sm:py-12 md:py-16 min-h-screen"
+      className="bg-white py-6 sm:py-10 md:py-14 min-h-screen"
     >
       <div className="mx-auto w-full container px-4 sm:px-6 md:px-8 lg:px-16">
-        <h2 className="text-3xl sm:text-4xl md:text-[44px] tracking-widest text-[#0a0a0a] uppercase font-[family-name:var(--font-vollkorn-sc),_serif] font-medium text-center">
+        <h2 className="text-2xl sm:text-[28px] md:text-[32px] tracking-widest text-[#0a0a0a] uppercase font-[family-name:var(--font-vollkorn-sc),_serif] font-medium text-center">
           Travel Stories &amp; Guides
         </h2>
 
@@ -58,7 +58,7 @@ function Travel() {
         </div>
 
         {/* Desktop: Grid */}
-        <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-14 hidden md:grid h-full grid-cols-1 md:grid-cols-2 lg:grid-cols-7 lg:grid-rows-2 auto-rows-[minmax(10rem,auto)] sm:auto-rows-[minmax(12rem,auto)] gap-4 sm:gap-5 md:gap-6 lg:gap-8 pb-6">
+        <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-14 hidden md:grid h-full grid-cols-1 md:grid-cols-2 lg:grid-cols-7 lg:grid-rows-2 auto-rows-[minmax(8rem,auto)] sm:auto-rows-[minmax(10rem,auto)] gap-4 sm:gap-5 md:gap-6 lg:gap-8 pb-6">
           {travelArticles.map((article, index) => (
             <TravelArticleCard
               key={index}

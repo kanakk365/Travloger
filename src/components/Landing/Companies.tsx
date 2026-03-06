@@ -10,9 +10,9 @@ const companies = [
 
 export default function Companies() {
   return (
-    <section className="bg-white py-16 sm:py-24">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 text-center">
-        <h2 className="text-3xl sm:text-4xl md:text-[44px] tracking-widest text-[#0a0a0a] uppercase mb-4 sm:mb-8 font-[family-name:var(--font-vollkorn-sc),_serif] font-medium text-center">
+    <section className="bg-white py-8 sm:py-12">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-center">
+        <h2 className="text-2xl sm:text-[28px] md:text-[32px] tracking-widest text-[#0a0a0a] uppercase mb-2 sm:mb-4 font-[family-name:var(--font-vollkorn-sc),_serif] font-medium text-center">
           Companies that trust us
         </h2>
 

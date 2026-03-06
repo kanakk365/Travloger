@@ -8,7 +8,6 @@ import {
   Vollkorn_SC,
 } from "next/font/google";
 import "./globals.css";
-import LenisProvider from "@/components/LenisProvider";
 import MobileBottomDock from "@/components/MobileBottomDock";
 
 const geistSans = Geist({
@@ -64,7 +63,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} ${urbanist.variable} ${poppins.variable} ${vollkornSc.variable} font-manrope antialiased`}
       >
-        <LenisProvider>{children}</LenisProvider>
+        {children}
         <MobileBottomDock />
       </body>
     </html>
